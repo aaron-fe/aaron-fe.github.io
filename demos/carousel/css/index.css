@@ -71,7 +71,7 @@ html, body {
 	position: absolute; bottom: 0; left: 0;
 	background: url(../images/gradient-bottom.png) repeat-x;
 	font-family: 'Microsoft Yahei', Simsun, arial, tahoma;
-	text-indent: 8px;
+	text-indent: 30px;
 } 
 .carousel-items-wrap .item-info h3 {
 	font-size: 28px; font-weight: normal;

@@ -72,7 +72,7 @@ html, body {
 	background: url(../images/gradient-bottom.png) repeat-x;
 	font-family: 'Microsoft Yahei', Simsun, arial, tahoma;
 	text-indent: 8px;
-}
+} 
 .carousel-items-wrap .item-info h3 {
 	font-size: 28px; font-weight: normal;
 	margin-top: 16px;
@@ -80,7 +80,13 @@ html, body {
 }
 .carousel-items-wrap .item-info p {
 	font-size: 16px;
-	color: #ccc;
+	color: #eee;
+}
+.carousel-items-wrap .item-info h3, 
+.carousel-items-wrap .item-info p {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 /************** navs ************/

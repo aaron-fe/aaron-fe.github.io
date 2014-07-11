@@ -1,0 +1,106 @@
+html, body {
+	width: 100%; height: 100%;
+	overflow: hidden;
+}
+
+#carousel {
+	width: 100%; height: 100%;
+	position: relative;
+}
+
+/************** carousel controls prev & next **************/
+.control {
+	display: block; width: 30px; height: 44px;
+	position: absolute; top: 50%;
+	margin-top: -22px;
+	z-index: 20;
+}
+.control-prev {
+	left: 3%;
+}
+.control-next {
+	right: 3%;
+}
+.control-prev a, 
+.control-next a {
+	display: block; width: 100%; height: 100%;
+	line-height: 99;
+	overflow: hidden;
+}
+.control-prev a {
+	background: url(../images/control-prev.png) no-repeat;
+}
+.control-next a {
+	background: url(../images/control-next.png) no-repeat;
+}
+.control-prev a:hover {
+	background: url(../images/control-prev-hover.png) no-repeat;
+}
+.control-next a:hover {
+	background: url(../images/control-next-hover.png) no-repeat;
+}
+
+/************* item images *************/
+.carousel-items-wrap {
+	width: 100%; height: 100%;
+	position: relative;
+}
+.carousel-items-wrap li {
+	display: none;
+	width: 100%; height: 100%;
+	position: absolute; top: 0; left: 0;
+	z-index: 1;
+}
+.carousel-items-wrap .active {
+	display: block;
+	z-index: 2;
+}
+
+.carousel-items-wrap a {
+	display: block; width: 100%; height: 100%;
+}
+.carousel-items-wrap img {
+	display: block; width: 1600px; height: 900px;
+	position: absolute; top: 50%; left: 50%;
+	margin-top: -450px; margin-left: -800px;
+}
+
+/************ title, description ************/
+.carousel-items-wrap .item-info {
+	display: block; width: 100%; height: 120px;
+	position: absolute; bottom: 0; left: 0;
+	background: url(../images/gradient-bottom.png) repeat-x;
+	font-family: 'Microsoft Yahei', Simsun, arial, tahoma;
+	text-indent: 8px;
+}
+.carousel-items-wrap .item-info h3 {
+	font-size: 28px; font-weight: normal;
+	margin-top: 16px;
+	color: #fff;
+}
+.carousel-items-wrap .item-info p {
+	font-size: 16px;
+	color: #ccc;
+}
+
+/************** navs ************/
+.carousel-navs-wrap {
+	display: block; width: 100%;
+	position: absolute; bottom: 0; left: 0;
+	text-align: center;
+	z-index: 30;
+}
+.carousel-navs-wrap a {
+	display: inline-block; *display: inline; *zoom: 1;
+	margin: 4px;
+	color: #666;
+	font-family: arial;
+	font-size: 28px; 
+	_font-size: 16px;
+}
+.carousel-navs-wrap a {
+	text-decoration: none;
+}
+.carousel-navs-wrap .active {
+	color: #fff;
+}

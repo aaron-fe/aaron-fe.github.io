@@ -6,7 +6,6 @@
     var settings = {
         auto: true,
         duration: 6000,
-        responsive: true,
         wrapSlct: '#myFocus',
         prevSlct: '.control-prev a',
         nextSlct: '.control-next a',

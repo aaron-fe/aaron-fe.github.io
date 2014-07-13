@@ -59,6 +59,11 @@ html, body {
 .carousel-items-wrap a {
 	display: block; width: 100%; height: 100%;
 }
+.carousel-items-wrap .gradient-top {
+	position: absolute; top: 0; left: 0;
+	display: block; width: 100%; height: 230px;
+	background: url(../images/gradient-top.png) center top repeat-x;
+}
 .carousel-items-wrap img {
 	display: block; width: 1600px; height: 900px;
 	position: absolute; top: 50%; left: 50%;
@@ -99,7 +104,7 @@ html, body {
 .carousel-navs-wrap a {
 	display: inline-block; *display: inline; *zoom: 1;
 	margin: 4px;
-	color: #666;
+	color: #999;
 	font-family: arial;
 	font-size: 28px; 
 	_font-size: 16px;

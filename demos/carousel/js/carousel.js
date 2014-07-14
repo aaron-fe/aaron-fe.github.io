@@ -33,6 +33,8 @@
                 return false;
             }
 
+            this.stop();
+
             this.animateFinished = false;
 
             curItem.fadeOut(duration, function () {
@@ -45,6 +47,8 @@
                 navs.eq(index).addClass('active');
                 self.animateFinished = true;
             });
+
+            this.start();
         },
         next: function () {
             this.showIndex++;
@@ -53,9 +57,7 @@
                 this.showIndex = 0;
             }
 
-            this.stop();
             this.show(this.showIndex);
-            this.auto();
         },
         prev: function () {
             this.showIndex--;
@@ -64,9 +66,7 @@
                 this.showIndex = settings.total - 1;
             }
 
-            this.stop();
             this.show(this.showIndex);
-            this.auto();
         },
         bindEvent: function () {
             var wrap = $(settings.wrapSlct),
@@ -96,7 +96,7 @@
                 }
             });
         },
-        auto: function () {
+        start: function () {
             if (!settings.auto) {
                 return false;
             }

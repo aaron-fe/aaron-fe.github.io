@@ -168,15 +168,15 @@
     display: block;
 }
 #page4 .bg {
-    display: block; width: 800px; height: 344px;
-    position: absolute; left: 50%; top: 60px;
-    margin-left: -400px;
+    display: block; width: 800px; height: 520px;
+    position: absolute; left: 50%; top: 50%;
+    margin-left: -400px; margin-top: -260px;
 }
 #page4 .bg1 {
-    background: no-repeat url(../images/s_page_4_1.png);
+    background: no-repeat url(../images/s_page_4_1.png) 50% 0;
 }
 #page4 .bg2 {
-    background: no-repeat url(../images/s_page_4_2.png);
+    background: no-repeat url(../images/s_page_4_2.png) 50% 0;
     display: none;
 }
 #page4 .page-info {

@@ -115,9 +115,9 @@
                 me.render();
             });
             // orientationchange
-            $(win).on('orientationchange', function() {
+            window.addEventListener('orientationchange', function() {
                 me.render();
-            });
+            }, false);
             // scroll
             var timeStamp = new Date().getTime();
             $(win).on('DOMMouseScroll mousewheel', function (event) {

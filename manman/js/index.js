@@ -114,10 +114,6 @@
             $(win).on('resize', function() {
                 me.render();
             });
-            // orientationchange
-            window.addEventListener('orientationchange', function() {
-                me.render();
-            }, false);
             // scroll
             var timeStamp = new Date().getTime();
             $(win).on('DOMMouseScroll mousewheel', function (event) {

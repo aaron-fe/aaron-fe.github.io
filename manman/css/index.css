@@ -45,17 +45,17 @@
 }
 .page-info {
     text-align: left;
-    width: 288px;
+    width: 360px;
     color: #fff;
     position: absolute;
 }
 .page-info h2 {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 4px;
 
 }
 .page-info p {
-    font-size: 16px;
+    font-size: 18px;
 }
 #page1 {
     background: #18c3f7;
@@ -67,20 +67,20 @@
 }
 #page1 .download {
     position: absolute; top: 50%; right: 0;
-    width: 288px;
+    width: 360px;
 }
 #page1 .crcode {
     color: #fff;
     font-size: 12px;
-    width: 100px;
+    width: 120px;
     text-align: center;
 }
 #page1 .btn-android {
-    display: block; width: 150px; height: 37px;
+    display: block; width: 180px; height: 44px;
     overflow: hidden;
     background: no-repeat url(../images/s_btn_android.png);
     line-height: 999;
-    position: absolute; right: 0; top: 63px;
+    position: absolute; right: 0; top: 76px;
 }
 #page1 .bg {
     width: 436px; height: 387px;
@@ -92,7 +92,7 @@
     background: no-repeat url(../images/s_page_1_1.png);
 }
 #page1 .bg2 {
-    margin-top: -394px;
+    margin-top: -494px;
     z-index: 9;
     background: no-repeat url(../images/s_page_1_2.png);
 }
@@ -161,7 +161,7 @@
 }
 #page3 .page-info {
     top: 50%; right: 0;
-    margin-top: -50px;
+    margin-top: -80px;
 }
 #page4 {
     background: #fe6869;
@@ -173,15 +173,38 @@
     margin-left: -400px; margin-top: -260px;
 }
 #page4 .bg1 {
+    z-index: 10;
     background: no-repeat url(../images/s_page_4_1.png) 50% 0;
 }
 #page4 .bg2 {
+    z-index: 9;
     background: no-repeat url(../images/s_page_4_2.png) 50% 0;
     display: none;
+}
+#page4 .bg3 {
+    width: 252px; height: 252px;
+    margin-left: -126px; margin-top: -40px;
+    z-index: 8;
+    background: no-repeat url(../images/s_page_4_3.png);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#page4 .rotate45 {
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition-duration: .6s;
+    transition-property: transform;
 }
 #page4 .page-info {
     text-align: center;
     left: 50%; top: 50%;
-    margin-left: -150px;
+    margin-left: -180px;
     margin-top: 100px;
+    z-index: 20;
 }

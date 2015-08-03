@@ -1,19 +1,18 @@
 (function(win) {
     var FullPage = {
         index: 1,
-        wh: $(win).height(),
         $page: $('.page'),
         $wrap: $('#pageWrap'),
         $nav: $('.page-nav a'),
         $next: $('#btnNext'),
         showPage1: function () {
-            $('#page1 .bg2').animate({marginTop: '+=200px'}, 400);
+            $('#page1 .bg2').animate({marginTop: '+=300px'}, 400);
             $('#page1 .bg3').animate({marginLeft: '-=100px'}, 400);
             $('#page1 .bg4').animate({marginLeft: '+=100px'}, 400);
             $('#page1 .bg5').animate({marginLeft: '-=150px'}, 400);   
         },
         hidePage1: function() {
-            $('#page1 .bg2').css({marginTop: '-394px'});
+            $('#page1 .bg2').css({marginTop: '-494px'});
             $('#page1 .bg3').css({marginLeft: '100px'});
             $('#page1 .bg4').css({marginLeft: '-100px'});
             $('#page1 .bg5').css({marginLeft: '150px'});
@@ -40,9 +39,11 @@
         },
         showPage4: function () {
             $('#page4 .bg2').fadeIn(600);
+            $('#page4 .bg3').addClass('rotate45');
         },
         hidePage4: function() {
             $('#page4 .bg2').css({display: 'none'});
+            $('#page4 .bg3').removeClass('rotate45');
         },
         next: function() {
             if (this.index >= this.len) {
@@ -62,9 +63,11 @@
            this.bindEvent();
         },
         render: function() {
+            this.wh = $(win).height();
             this.len = this.$page.length;
             this.$wrap.css({
-                height: this.wh * this.len + 'px'
+                height: this.wh * this.len + 'px',
+                top: '-' + this.wh * (this.index - 1) + 'px'
             });
             this.$page.css({
                 height: this.wh + 'px'
@@ -87,11 +90,6 @@
                 me['showPage' + id]();
                 me.$page.removeClass('page-current');
                 me.$page.eq(id - 1).addClass('page-current');
-                if (id === me.len) {
-                    me.$next.hide();
-                } else {
-                    me.$next.show();
-                }
             });
             
             this.index = id;
@@ -108,7 +106,11 @@
             });
             // next
             this.$next.on('click', function() {
-                me.next();
+                if (me.index >= me.len) {
+                    me.show(1);
+                } else {
+                    me.next();
+                }
             });
             // resize
             $(win).on('resize', function() {
@@ -118,7 +120,7 @@
             var timeStamp = new Date().getTime();
             $(win).on('DOMMouseScroll mousewheel', function (event) {
                 var now = new Date().getTime();
-                if (now - timeStamp < 140) {
+                if (now - timeStamp < 120) {
                     timeStamp = now;
                     return;
                 } else {

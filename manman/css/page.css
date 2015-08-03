@@ -186,17 +186,10 @@ body {
 }
 
 /* responsive begin */
-.w800 .page-content,
 .w1024 .page-content, 
 .w1366 .page-content, 
 .w1600 .page-content{
-    width: 800px;
-}
-
-.w1024 .nav-inner,
-.w1366 .nav-inner,
-.w1600 .nav-inner {
-    width: 1000px;
+    width: 940px;
 }
 
 .w1024 .content-wrap,

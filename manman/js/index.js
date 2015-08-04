@@ -98,7 +98,7 @@
             var me = this;
             // nav
             this.$nav.on('click', function() {
-                var index = $(this).attr('index');
+                var index = me.$nav.index($(this)) + 1;
                 if (index === me.index) {
                     return;
                 }

@@ -125,7 +125,11 @@
                     return;
                 } else {
                     if (event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0) {
-                        me.next();
+                        if (me.index >= me.len) {
+                            me.show(1);
+                        } else {
+                            me.next();
+                        }
                     } else {
                         me.prev();
                     }

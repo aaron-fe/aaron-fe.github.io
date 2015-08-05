@@ -74,6 +74,10 @@
             });
         },
         show: function(id) {
+            if (this.animating) {
+                return;
+            }
+            this.animating = true;
             var step = id - this.index;
             var wh = this.wh;
             var me = this;
@@ -90,6 +94,7 @@
                 me['showPage' + id]();
                 me.$page.removeClass('page-current');
                 me.$page.eq(id - 1).addClass('page-current');
+                me.animating = false;
             });
             
             this.index = id;

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>医生回复</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+    	<div class="back" tapmode onclick="api.closeWin();">
+    		<i class="icon icon-angle-left"></i>
+    	</div>
+        <h1>诊断结果</h1>
+    </div>
+    <section>
+    	<div id="doctorReply"></div>
+    </section>
+</div>
+<script type="text/template" id="doctorReplyTpl">
+<h3>病情描述：</h3>
+<h4><span><%= data.date %></span><span><%= data.title %></span></h4>
+<p><%= data.description %></p>
+<h3>医生诊断及建议：</h3>
+<p><%= data.advice %></p>
+</script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
+<script type="text/javascript">
+	var data = {
+		title: '肩膀痛',
+		date: '2013-02-02',
+		description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis laborum possimus, minima ipsa non nihil necessitatibus doloribus minus dolores? Voluptas quos, voluptates porro quibusdam iusto pariatur eaque, alias facere saepe, provident numquam odit. Laboriosam.',
+		advice: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eos repudiandae ab illum quos quia distinctio voluptas totam veritatis impedit labore, dolorum quas consectetur, autem quae corrupti numquam quidem. Cupiditate quo, consequuntur impedit expedita est doloremque dolorem, consectetur praesentium optio ratione explicabo distinctio! Voluptatibus, ratione!'
+	};
+	$('#doctorReply').html(_.template($('#doctorReplyTpl').html(), data));
+	apiready = function() {
+
+	};
+</script>
+</body>
+</html>

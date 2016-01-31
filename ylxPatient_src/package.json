@@ -1,0 +1,21 @@
+{
+  "name": "yilianxi_patient",
+  "version": "1.0.0",
+  "description": "yilianxi patient",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": {
+    "name": "lizhuhong",
+    "email": "xiaohong4512@163.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5"
+  }
+}

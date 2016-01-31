@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<div class="header-item header-item-act" id="home">
+		    <h1>北京张祥胜中医诊所</h1>
+		</div>
+		<div class="header-item" id="discover">
+		    <h1>发现</h1>
+		</div>
+		<div class="header-item" id="messages">
+		    <h1>消息</h1>
+		</div>
+		<div class="header-item" id="my">
+		    <h1>我</h1>
+		</div>
+	</div>
+    <div id="footer" class="clearfix">
+		<div class="nav-item pull-left nav-item-act" tapmode onclick="switchFrame(0);"><i class="icon icon-home"></i><span>首页</span></div>
+		<div class="nav-item pull-left" tapmode onclick="switchFrame(1);"><i class="icon icon-search"></i><span>发现</span></div>
+		<div class="nav-item pull-left" tapmode onclick="switchFrame(2);"><i class="icon icon-comment"></i><span>消息</span></div>
+		<div class="nav-item pull-left" tapmode onclick="switchFrame(3);"><i class="icon icon-user"></i><span>我</span></div>    	
+    </div>	
+</div>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript">
+	var frameNames = ['home', 'discover', 'messages', 'my'];
+	function switchFrame(index) {
+		var $headerItems = $('#header .header-item');
+		$headerItems.removeClass('header-item-act');
+		$headerItems.eq(index).addClass('header-item-act');
+
+		var $footItems = $('#footer .nav-item');
+		$footItems.removeClass('nav-item-act');
+		$footItems.eq(index).addClass('nav-item-act');
+
+		var headerHeight = $('#header').height();
+		var footerHeight = $('#footer').height();
+
+		var frameName = frameNames[index];
+		api.openFrame({
+			name: frameName,
+			url: './' + frameName + '_frame.html',
+			bounces: false,
+			rect: {
+				x: 0,
+				y: headerHeight,
+				w: 'auto',
+				h: api.frameHeight - headerHeight - footerHeight
+			},
+			vScrollBarEnabled: false,
+			hScrollBarEnabled: false
+		});
+	}
+    apiready = function() {
+    };
+</script>
+</body>
+</html>

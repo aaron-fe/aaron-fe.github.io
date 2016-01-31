@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/home_frame.css" />
+</head>
+<body>
+<div id="wrap">
+	<section class="con-sec">
+		<div class="clinic-info-group">
+			<p>联系电话：<span class="clinic-phone">010-88886666</span></p>
+			<p>地址：<span class="clinic-address">定福家园南里3号院1-4</span></p>
+			<div class="btn btn-small">导航地图</div>
+		</div>
+		<div class="btn-group clearfix">
+			<div class="btn-wrap"><div class="btn btn-small" onclick="openWin('clinic_intro')">诊所介绍</div></div>
+			<div class="btn-wrap"><div class="btn btn-small" onclick="openWin('clinic_billing')">收费条目</div></div>
+			<div class="btn-wrap"><div class="btn btn-small" onclick="openWin('clinic_ad')">诊所活动</div></div>
+			<div class="btn-wrap"><div class="btn btn-small">关注</div></div>
+		</div>
+	</section>
+	<section class="con-sec">
+		<ul class="tab-nav clearfix">
+			<li class="tab-nav-item tab-nav-item-act">诊所医生</li>
+			<li class="tab-nav-item">名誉医生</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-content-item tab-content-item-act">
+				<ul class="doctor-list">
+					<li onclick="openWin('doctor_home')">
+						<div class="doctor-info">
+							<div class="photo"></div>
+							<h4 class="doctor-name">张祥胜</h4>
+							<h5>主任医师</h5>
+							<p>擅长：各类骨科疾病的中医治疗</p>
+						</div>
+						<div class="doctor-rating">
+							<div>患者推荐热度：4.3热（217票）<span class="recent-replies">近两周回复：<b>13</b></span></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-content-item">
+				<ul class="doctor-list"></ul>
+			</div>
+		</div>
+	</section>
+</div>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	function openWin(pageName) {
+		api.openWin({
+			name: pageName,
+			url: './' + pageName + '.html',
+			bounces: false
+		});
+	}
+	apiready = function() {
+
+	};
+</script>
+</body>
+</html>

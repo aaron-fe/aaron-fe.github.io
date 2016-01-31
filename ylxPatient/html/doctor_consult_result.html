@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>医生咨询结果</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/doctor_consult_result.css" />
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+    	<div class="back" tapmode onclick="api.closeWin();">
+    		<i class="icon icon-angle-left"></i>
+    	</div>
+        <h1>咨询结果</h1>
+    </div>
+    <section class="con-sec">
+    	<h3>您的咨询提交成功！</h3>
+    	<p>医生将尽力在24小时内给您回复。<br>医生回复您的咨询后，会有短信或者消息通知您。请您留意。</p>
+    	<div class="btn-group">
+    		<div class="btn-wrap pull-left">
+    			<div class="btn btn-medium" id="btnCheckMyConsult" tapmode onclick="checkMyConsult();">查看我的咨询</div>
+    		</div>
+    		<div class="btn-wrap pull-left">
+    			<div class="btn btn-medium" id="btnBack2Home" tapmode onclick="back2Home();">返回诊所首页</div>
+    		</div>
+    	</div>
+    </section>
+</div>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	function checkMyConsult() {
+
+	}
+	function back2Home() {
+
+	}
+	apiready = function() {
+		var header = $api.byId('header');
+		//适配iOS 7+，Android 4.4+状态栏
+		$api.fixStatusBar(header);
+	};
+</script>
+</body>
+</html>

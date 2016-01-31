@@ -1,0 +1,24 @@
+.account-info {
+  margin-bottom: 10px;
+}
+.account-info p {
+  display: inline-block;
+  line-height: 24px;
+}
+.account-info .btn {
+  display: inline-block;
+  height: 24px;
+  width: 60px;
+  font-size: 14px;
+  line-height: 24px;
+}
+.my-table th:first-child,
+.my-table td:first-child {
+  width: 50px;
+  text-align: center;
+}
+.my-table th:last-child,
+.my-table td:last-child {
+  width: 80px;
+  text-align: center;
+}

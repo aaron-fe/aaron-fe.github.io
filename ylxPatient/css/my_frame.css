@@ -1,26 +1,75 @@
+body {
+  background-color: #f0efed;
+  padding-top: 0;
+}
+.pic-sec {
+  background: #7fd149 url(../image/bg-my-frame.png) center center;
+  height: 160px;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  text-align: center;
+  color: #fff;
+}
+.user-pic {
+  border-radius: 50% 50%;
+  border: 1px solid #fff;
+  width: 50px;
+  height: 50px;
+  margin-top: 30px;
+}
 .con-sec {
-  padding: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #f0efed;
+  border-bottom: 1px solid #f0efed;
+  background-color: #fff;
+}
+.con-sec-logout {
+  margin-top: 10px;
 }
 .my-item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0efed;
   margin-left: 10px;
-  height: 40px;
-  line-height: 40px;
-  color: #333;
+  height: 44px;
+  line-height: 44px;
+}
+.my-item:first-child {
+  margin-top: -1px;
 }
 .my-item:last-child {
-  border: 0;
+  margin-bottom: -1px;
 }
 .my-item .icon:first-child {
-  margin-right: 8px;
-  font-size: 16px;
+  display: block;
+  width: 20px;
+  height: 44px;
+  -webkit-background-size: 16px auto;
+  background-size: 16px auto;
+  float: left;
+  margin-right: 6px;
 }
-.my-item .icon-angle-right {
+.my-item .icon-message {
+  background: no-repeat url(../image/icon-message.png) center center;
+}
+.my-item .icon-account {
+  background: no-repeat url(../image/icon-account.png) center center;
+}
+.my-item .icon-medical-case {
+  background: no-repeat url(../image/icon-medical-case.png) center center;
+}
+.my-item .icon-doctor {
+  background: no-repeat url(../image/icon-doctor.png) center center;
+}
+.my-item .icon-clinic {
+  background: no-repeat url(../image/icon-clinic.png) center center;
+}
+.my-item .icon-logout {
+  background: no-repeat url(../image/icon-logout.png) center center;
+}
+.my-item .icon-next {
   float: right;
-  font-size: 24px;
-  line-height: 40px;
-  margin-right: 10px;
-  color: #aaa;
+  display: block;
+  width: 30px;
+  height: 44px;
+  background: no-repeat url(../image/header/next.png) center center;
+  -webkit-background-size: 8px auto;
+  background-size: 8px auto;
 }

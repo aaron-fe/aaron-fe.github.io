@@ -1,12 +1,30 @@
 .my-table {
+	color: #555;
 	width: 100%;
-	th, td {
-		border: 1px solid #ddd;
-		padding: 3px 6px;
-		vertical-align: middle;
-		text-align: left;
-	}
 	th {
+		color: #78cd43;
+		font-weight: normal;
+		span {
+			display: block;
+			border-right: 1px solid #f0efed;
+		}
+		&:last-child {
+			span {
+				border-right: 0;
+			}
+		}
+	}
+	th, td {
+		padding: 5px 0;
+		vertical-align: middle;
 		text-align: center;
+	}
+	td {
+		padding: 5px 6px;
+	}
+	tr {
+		border-bottom: 1px solid #f0efed;
+		border-top: 1px solid #f0efed;
+		margin-bottom: -1px;
 	}
 }

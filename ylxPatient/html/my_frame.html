@@ -6,43 +6,49 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>我的</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../css/my_frame.css" />
 </head>
 <body>
 <div id="wrap">
+    <section class="pic-sec">
+        <img class="user-pic" src="../image/fake-pic.png" alt="">
+        <div class="user-name">kangkang</div>
+        <div class="user-phone">15011345670</div>
+    </section>
     <section class="con-sec">
     	<div class="my-item clearfix" tapmode onclick="openWin('my_info');">
-    		<i class="icon icon-edit"></i>
+    		<i class="icon icon-message"></i>
     		<span>我的信息</span>
-    		<i class="icon icon-angle-right"></i>
+    		<i class="icon icon-next"></i>
     	</div>
     	<div class="my-item clearfix" tapmode onclick="openWin('my_account');">
-    		<i class="icon icon-credit-card"></i>
+    		<i class="icon icon-account"></i>
     		<span>我的账户</span>
-    		<i class="icon icon-angle-right"></i>
+    		<i class="icon icon-next"></i>
     	</div>
     	<div class="my-item clearfix" tapmode onclick="openWin('my_medical_case');">
-    		<i class="icon icon-list"></i>
+    		<i class="icon icon-medical-case"></i>
     		<span>我的病例</span>
-    		<i class="icon icon-angle-right"></i>
+    		<i class="icon icon-next"></i>
     	</div>
     	<div class="my-item clearfix" tapmode onclick="openWin('my_doctor');">
-    		<i class="icon icon-user-md"></i>
+    		<i class="icon icon-doctor"></i>
     		<span>我的医生</span>
-    		<i class="icon icon-angle-right"></i>
+    		<i class="icon icon-next"></i>
     	</div>
     	<div class="my-item clearfix" tapmode onclick="openWin('my_clinic')">
-    		<i class="icon icon-medkit"></i>
+    		<i class="icon icon-clinic"></i>
     		<span>我的诊所</span>
-    		<i class="icon icon-angle-right"></i>
+    		<i class="icon icon-next"></i>
     	</div>
-    	<div class="my-item clearfix" tapmode onclick="openWin('my_broadcast')">
-    		<i class="icon icon-volume-up"></i>
-    		<span>我的广播</span>
-    		<i class="icon icon-angle-right"></i>
-    	</div>
+    </section>
+    <section class="con-sec con-sec-logout">
+        <div class="my-item clearfix" tapmode onclick="openWin('my_broadcast')">
+            <i class="icon icon-logout"></i>
+            <span>退出登录</span>
+            <i class="icon icon-next"></i>
+        </div>
     </section>
 </div>
 <script type="text/javascript" src="../script/api.js"></script>

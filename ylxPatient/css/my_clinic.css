@@ -1,5 +1,4 @@
-.my-table th:last-child,
-.my-table td:last-child {
-  text-align: center;
-  width: 80px;
+.my-table th:first-child,
+.my-table td:first-child {
+  width: 90px;
 }

@@ -1,7 +1,7 @@
 .my-table th:first-child,
 .my-table td:first-child {
   text-align: center;
-  width: 42px;
+  width: 54px;
 }
 .my-table th:last-child,
 .my-table td:last-child {

@@ -1,13 +1,29 @@
 .my-table {
+  color: #555;
   width: 100%;
+}
+.my-table th {
+  color: #78cd43;
+  font-weight: normal;
+}
+.my-table th span {
+  display: block;
+  border-right: 1px solid #f0efed;
+}
+.my-table th:last-child span {
+  border-right: 0;
 }
 .my-table th,
 .my-table td {
-  border: 1px solid #ddd;
-  padding: 3px 6px;
+  padding: 5px 0;
   vertical-align: middle;
-  text-align: left;
-}
-.my-table th {
   text-align: center;
+}
+.my-table td {
+  padding: 5px 6px;
+}
+.my-table tr {
+  border-bottom: 1px solid #f0efed;
+  border-top: 1px solid #f0efed;
+  margin-bottom: -1px;
 }

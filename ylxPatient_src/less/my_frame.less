@@ -1,26 +1,71 @@
+body {
+	background-color: #f0efed;
+	padding-top: 0;
+}
+.pic-sec {
+	background: #7fd149 url(../image/bg-my-frame.png) center center;
+	height: 160px;
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
+	text-align: center;
+	color: #fff;
+}
+.user-pic {
+	border-radius: 50% 50%;
+	border: 1px solid #fff;
+	width: 50px; height: 50px;
+	margin-top: 30px;
+}
 .con-sec {
-	padding: 0;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+	border-top: 1px solid #f0efed;
+	border-bottom: 1px solid #f0efed;
+	background-color: #fff;
+}
+.con-sec-logout {
+	margin-top: 10px;
 }
 .my-item {
-	@item-height: 40px;
-	border-bottom: 1px solid #eee;
+	@item-height: 44px;
+	border-bottom: 1px solid #f0efed;
 	margin-left: 10px;
 	height: @item-height;
 	line-height: @item-height;
-	color: #333;
+	&:first-child {
+		margin-top: -1px;
+	}
 	&:last-child {
-		border: 0;
+		margin-bottom: -1px;
 	}
 	.icon:first-child {
-		margin-right: 8px;
-		font-size: 16px;
+		display: block; width: 20px; height: @item-height;
+		-webkit-background-size: 16px auto;
+		background-size: 16px auto;
+		float: left;
+		margin-right: 6px;
 	}
-	.icon-angle-right {
+	.icon-message {
+		background: no-repeat url(../image/icon-message.png) center center;
+	}
+	.icon-account {
+		background: no-repeat url(../image/icon-account.png) center center;
+	}
+	.icon-medical-case {
+		background: no-repeat url(../image/icon-medical-case.png) center center;
+	}
+	.icon-doctor {
+		background: no-repeat url(../image/icon-doctor.png) center center;
+	}
+	.icon-clinic {
+		background: no-repeat url(../image/icon-clinic.png) center center;
+	}
+	.icon-logout {
+		background: no-repeat url(../image/icon-logout.png) center center;
+	}
+	.icon-next {
 		float: right;
-		font-size: 24px; line-height: @item-height;
-		margin-right: 10px;
-		color: #aaa;
+		display: block; width: 30px; height: @item-height;
+		background: no-repeat url(../image/header/next.png) center center;
+		-webkit-background-size: 8px auto;
+		background-size: 8px auto;
 	}
 }

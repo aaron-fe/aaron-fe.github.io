@@ -6,22 +6,20 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>医生主页</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/doctor_home.css" />
 </head>
 <body>
 <div id="wrap">
     <div id="header">
-    	<div class="back" tapmode onclick="api.closeWin();">
-    		<i class="icon icon-angle-left"></i>
-    	</div>
+    	<div class="back" tapmode onclick="api.closeWin();"></div>
         <h1>张祥胜</h1>
     </div>
     <section class="con-sec">
-    	<div class="btn-group">
-    		<div class="btn btn-small">咨询</div>
-    		<div class="btn btn-small">简介</div>
-    		<div class="btn btn-small">关注</div>
+    	<div class="btn-group clearfix">
+    		<div class="btn btn-consult"><span>咨询</span></div>
+    		<div class="btn btn-open-intro" onclick="openWin('doctor_intro')"><span>简介</span></div>
+    		<div class="btn btn-pay-attention"><span>关注</span></div>
     	</div>
     </section>
     <section>
@@ -32,11 +30,12 @@
 <script type="text/template" id="consultListTpl">
 <% _.each(data, function(item) { %>
     <div class="consult-item">
-		<p><b>患者</b>: <%= item.phone %></p>
-		<p><b>疾病</b>: <%= item.disease %></p>
-		<p><b>疗效</b>: <%= item.effect %></p>
-		<p><b>态度</b>: <%= item.attitude %></p>
-		<p><b>详情</b>: <%= item.details %></p>
+		<p><b>患者:</b> <%= item.phone %></p>
+		<p><b>疾病:</b> <%= item.disease %></p>
+		<p><b>疗效:</b> <%= item.effect %></p>
+		<p><b>态度:</b> <%= item.attitude %></p>
+		<p><b>详情:</b> <%= item.details %></p>
+		<div class="btn-ask-for-consult">申请沟通</div>
 	</div>
 <% }); %>
 </script>
@@ -61,6 +60,15 @@
 	}];
 
 	$('#consultList').html(_.template($('#consultListTpl').html(), data));
+
+	function openWin(pageName) {
+		api.openWin({
+			name: pageName,
+			url: './' + pageName + '.html',
+			bounces: false
+		});
+	}
+
 	apiready = function() {
 
 	};

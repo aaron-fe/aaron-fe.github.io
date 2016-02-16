@@ -6,25 +6,36 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../css/home_frame.css" />
 </head>
 <body>
 <div id="wrap">
-	<section class="con-sec">
-		<div class="clinic-info-group">
-			<p>联系电话：<span class="clinic-phone">010-88886666</span></p>
-			<p>地址：<span class="clinic-address">定福家园南里3号院1-4</span></p>
-			<div class="btn btn-small">导航地图</div>
+	<section class="banner-top clearfix">
+		<div class="top-item tel-info">
+			<div class="icon icon-tel"></div>
+			<h3>联系电话</h3>
+			<p>010-88886666</p>
 		</div>
-		<div class="btn-group clearfix">
-			<div class="btn-wrap"><div class="btn btn-small" onclick="openWin('clinic_intro')">诊所介绍</div></div>
-			<div class="btn-wrap"><div class="btn btn-small" onclick="openWin('clinic_billing')">收费条目</div></div>
-			<div class="btn-wrap"><div class="btn btn-small" onclick="openWin('clinic_ad')">诊所活动</div></div>
-			<div class="btn-wrap"><div class="btn btn-small">关注</div></div>
+		<div class="top-item health-class">
+			<div class="icon icon-tv"></div>
+			<h3>健康讲堂</h3>
+			<p>为您讲诉健康知识</p>
+		</div>
+		<div class="top-item clinic-intro">
+			<div class="icon icon-hospital"></div>
+			<h3>诊所介绍</h3>
+		</div>
+		<div class="top-item chat-room">
+			<div class="icon icon-chat-room"></div>
+			<h3>聊天室</h3>
 		</div>
 	</section>
+	<div class="clinic-address">
+		<div class="icon-map-marker"></div>
+		<div id="clinicAddress">定福家园南里3号院4-1</div>
+	</div>
+	<div class="sec-seperator"></div>
 	<section class="con-sec">
 		<ul class="tab-nav clearfix">
 			<li class="tab-nav-item tab-nav-item-act">诊所医生</li>
@@ -35,19 +46,41 @@
 				<ul class="doctor-list">
 					<li onclick="openWin('doctor_home')">
 						<div class="doctor-info">
-							<div class="photo"></div>
-							<h4 class="doctor-name">张祥胜</h4>
+							<img src="../image/fake-pic.png" class="doctor-photo">
+							<h4 class="doctor-name">张祥胜<span class="ext-info">可咨询</span><span class="ext-info">可外诊</span></h4>
 							<h5>主任医师</h5>
 							<p>擅长：各类骨科疾病的中医治疗</p>
 						</div>
-						<div class="doctor-rating">
-							<div>患者推荐热度：4.3热（217票）<span class="recent-replies">近两周回复：<b>13</b></span></div>
+					</li>
+					<li onclick="openWin('doctor_home')">
+						<div class="doctor-info">
+							<img src="../image/fake-pic.png" class="doctor-photo">
+							<h4 class="doctor-name">王五<span class="ext-info">可咨询</span><span class="ext-info">可外诊</span></h4>
+							<h5>主任医师</h5>
+							<p>擅长：各类内科疾病的中医治疗</p>
 						</div>
 					</li>
 				</ul>
 			</div>
 			<div class="tab-content-item">
-				<ul class="doctor-list"></ul>
+				<ul class="doctor-list">
+					<li onclick="openWin('doctor_home')">
+						<div class="doctor-info">
+							<img src="../image/fake-pic.png" class="doctor-photo">
+							<h4 class="doctor-name">李四<span class="ext-info">可咨询</span></h4>
+							<h5>主任医师</h5>
+							<p>擅长：各类牙科</p>
+						</div>
+					</li>
+					<li onclick="openWin('doctor_home')">
+						<div class="doctor-info">
+							<img src="../image/fake-pic.png" class="doctor-photo">
+							<h4 class="doctor-name">赵五<span class="ext-info">可咨询</span><span class="ext-info">可外诊</span></h4>
+							<h5>主任医师</h5>
+							<p>擅长：各类眼科疾病</p>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</section>

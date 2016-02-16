@@ -6,7 +6,6 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <style>
@@ -14,23 +13,21 @@
 </head>
 <body class="page-login">
 <div id="wrap">
-	<header id="header">
-		<h1>医联系</h1>
+	<header id="logoWrap">
+		<div class="logo"></div>
 	</header>
 	<section>
 		<div class="field username">
-			<label for="username" class="icon-wrap">
-				<i class="icon icon-mobile-phone"></i>
-			</label>
+			<label for="username" class="icon icon-user-id"></label>
 			<input type="number" id="username" placeholder="请输入您的手机号" size="11" maxlength="11">
 		</div>
 		<div class="field password">
-			<label for="password" class="icon-wrap">
-				<i class="icon icon-key"></i>
-			</label>
+			<label for="password" class="icon icon-password"></label>
 			<input type="password" id="password" placeholder="请输入您的密码">
 		</div>
-		<div class="btn-login" tapmode onclick="login();">登 录</div>
+		<div class="btn-login" tapmode onclick="login();">登录</div>
+		<div class="btn-register" tapmode onclick="login();">注册</div>
+		<div class="btn-forget-password" tapmode onclick="login();">忘记密码？</div>
 	</section>
 </div>
 <script type="text/javascript" src="../script/api.js"></script>

@@ -6,15 +6,13 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>诊所活动</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/clinic_ad.css" />
 </head>
 <body>
 <div id="wrap">
     <div id="header">
-    	<div class="back" tapmode onclick="api.closeWin();">
-    		<i class="icon icon-angle-left"></i>
-    	</div>
+    	<div class="back" tapmode onclick="api.closeWin();"></div>
         <h1>北京张祥胜中医诊所</h1>
     </div>
     <section class="con-sec">
@@ -23,7 +21,10 @@
 </div>
 <script type="text/template" id="clinicAdTpl">
 <% _.each(data.ads, function(ad) { %>
-    <p><%= ad.title %></p>
+    <div class="ad-item">
+        <p class="title"><%= ad.title %></p>
+        <p class="date"><%= ad.date %></p>
+    </div>
 <% }); %>
 </script>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -36,7 +37,13 @@
         ads: [
             {
                 id: '1234',
-                title: '开店大酬宾'
+                title: '年底大酬宾，充100送50',
+                date: '2015-02-01'
+            },
+            {
+                id: '2234',
+                title: '专家坐诊，欢迎来参加',
+                date: '2015-04-01'
             }
         ]
     };

@@ -105,13 +105,8 @@ body {
 #footer .nav-item-act .icon-user {
   background-image: url(../image/footer/icon-user-active.png);
 }
-.btn {
+.sec-seperator {
   display: block;
-  font-size: 16px;
-  line-height: 40px;
-  text-align: center;
-  height: 40px;
-  background-color: #ff6836;
-  border-radius: 4px;
-  color: #fff;
+  height: 10px;
+  background: #f0efed;
 }

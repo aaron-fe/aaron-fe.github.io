@@ -1,68 +1,73 @@
-.field {
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
-  position: relative;
-  padding-left: 40px;
-  font-size: 14px;
+html,
+body {
+  background: #f5f5f5;
 }
-.field .icon-wrap {
+#logoWrap {
+  background: #f5f5f5;
+}
+#logoWrap .logo {
+  margin: 10px auto 30px;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: #7fd149 url(../image/icon-logo.png) no-repeat center center;
+  -webkit-background-size: 80px auto;
+  background-size: 80px auto;
+}
+.field {
+  border-bottom: 1px solid #c9c9c9;
+  position: relative;
+  padding-left: 30px;
+  font-size: 14px;
+  margin: 0 30px;
+  height: 32px;
+  padding-top: 12px;
+}
+.field .icon {
   position: absolute;
   left: 0;
-  top: 0;
-  font-size: 16px;
-  line-height: 50px;
+  bottom: 0;
   text-align: center;
-  width: 40px;
-  color: #ff6836;
+  display: block;
+  width: 30px;
+  height: 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 20px auto;
+  background-size: 20px auto;
+}
+.field .icon-user-id {
+  background-image: url(../image/icon-user-id.png);
+}
+.field .icon-password {
+  background-image: url(../image/icon-password.png);
 }
 .field input {
   display: block;
   width: 100%;
-  height: 50px;
-  color: #8E8C8C;
-}
-.username .icon-wrap {
-  font-size: 22px;
-}
-.register-note {
-  color: #666;
-  padding-left: 10px;
-  font-size: 14px;
-  line-height: 1.5;
-  position: relative;
-  top: 10px;
-}
-.register-note strong {
-  color: #222;
-  font-weight: normal;
+  height: 100%;
 }
 .btn-login,
 .btn-register,
-.btn-reset-pass {
+.btn-forget-password {
   height: 40px;
-  color: #fff;
-  background-color: #ff6836;
   text-align: center;
   word-spacing: 10px;
   font-size: 16px;
   line-height: 40px;
-  border-radius: 5px;
-  margin: 20px 10px;
+  margin: 30px 30px 10px;
 }
-.page-register .username,
-.page-reset-pass .username {
-  padding-right: 120px;
+.btn-login {
+  color: #fff;
+  background-color: #7fd149;
+  border: 1px solid #fff;
 }
-.page-register .username .get-verify-code,
-.page-reset-pass .username .get-verify-code {
-  position: absolute;
-  right: 10px;
-  top: 12px;
-  height: 24px;
-  line-height: 24px;
-  text-align: center;
-  padding: 0 6px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  color: #ff6836;
+.btn-register {
+  color: #555;
+  background-color: #f4f4f4;
+  border: 1px solid #c9c9c9;
+  margin-top: 0;
+}
+.btn-forget-password {
+  margin-top: 0;
 }

@@ -6,27 +6,50 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>诊所收费条目</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/clinic_billing.css" />
 </head>
 <body>
 <div id="wrap">
     <div id="header">
-    	<div class="back" tapmode onclick="api.closeWin();">
-    		<i class="icon icon-angle-left"></i>
-    	</div>
+    	<div class="back" tapmode onclick="api.closeWin();"></div>
         <h1>价格单</h1>
     </div>
     <section class="con-sec">
-    	<p>按摩 160元／小时</p>
-    	<p>拔罐 60元／小时</p>
-    	<p>接骨 300元／次</p>
-    	<p>出诊 100元／次</p>
-    	<p>药费，手术费另收。1公里内免车费，1公里以外按出租车票价报销。</p>
+    	<div id="clinicBilling"></div>
     </section>
 </div>
+<script type="text/template" id="clinicBillingTpl">
+<% _.each(data.ads, function(ad) { %>
+    <div class="ad-item clearfix">
+        <div class="title"><%= ad.title %></div>
+        <div class="price"><em><%= ad.price %></em><%= ad.unit %></div>
+    </div>
+<% }); %>
+</script>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
 <script type="text/javascript">
+    var data = {
+        id: '1234',
+        name: '北京张祥胜中医诊所',
+        ads: [
+            {
+                id: '1234',
+                title: '拔罐',
+                price: '30',
+                unit: '元/次'
+            },
+            {
+                id: '2234',
+                title: '按摩',
+                price: '60',
+                unit: '元/小时'
+            }
+        ]
+    };
+    $('#clinicBilling').html(_.template($('#clinicBillingTpl').html(), data));
 	apiready = function() {
 
 	};

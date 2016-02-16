@@ -6,15 +6,13 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>医生简介</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/doctor_intro.css" />
 </head>
 <body>
 <div id="wrap">
     <div id="header">
-    	<div class="back" tapmode onclick="api.closeWin();">
-    		<i class="icon icon-angle-left"></i>
-    	</div>
+    	<div class="back" tapmode onclick="api.closeWin();"></div>
         <h1>医生简介</h1>
     </div>
     <section>
@@ -23,7 +21,7 @@
 </div>
 <script type="text/template" id="doctorIntroTpl">
 <% _.each(data, function(item) { %>
-	<p><%= id.content %></p>
+	<p><%= item.content %></p>
 <% }); %>
 </script>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -31,9 +29,9 @@
 <script type="text/javascript" src="../script/underscore.min.js"></script>
 <script type="text/javascript">
 	var data = [{
-		content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, libero harum ut ex, beatae est.' 
+		content: '张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。' 
 	}, {
-		content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, tempore veniam. Sequi molestiae in qui velit. Atque et, tempora perferendis non in quod ipsum dolorum, laborum odit alias ad laboriosam assumenda expedita doloremque. Nam, ut.'
+		content: '张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。'
 	}];
 	$('#doctorIntro').html(_.template($('#doctorIntroTpl').html(), data));
 	apiready = function() {

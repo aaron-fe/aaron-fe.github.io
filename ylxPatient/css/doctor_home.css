@@ -1,0 +1,47 @@
+html,
+body {
+  background: #f0efed;
+}
+.btn-group {
+  height: 44px;
+  background: #fff;
+}
+.btn-group .btn {
+  float: left;
+  width: 33.333333%;
+  text-align: center;
+  color: #7fd149;
+  font-size: 16px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.btn-group .btn span {
+  display: inline-block;
+  border-right: 1px solid #f0efed;
+  line-height: 38px;
+  width: 100%;
+}
+.btn-group .btn:last-child span {
+  border-right: none;
+}
+.consult-item {
+  background: #fff;
+  margin-top: 10px;
+  padding: 10px;
+  position: relative;
+}
+.consult-item p b {
+  font-weight: normal;
+  margin-right: 6px;
+}
+.consult-item .btn-ask-for-consult {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+  color: #fff;
+  background: #7fd149;
+  border-radius: 2px;
+  text-align: center;
+  padding: 3px 10px;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>诊所活动详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/clinic_ad.css" />
+    <link rel="stylesheet" type="text/css" href="../css/clinic_ad_detail.css" />
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+    	<div class="back" tapmode onclick="api.closeWin();"></div>
+        <h1>北京张祥胜中医诊所</h1>
+    </div>
+    <section class="con-sec">
+        <div id="clinicAd"></div>
+    </section>
+</div>
+<script type="text/template" id="clinicAdTpl">
+    <div class="ad-item">
+        <p class="title"><%= data.title %></p>
+        <p class="date"><%= data.date %></p>
+    </div>
+    <div class="ad-datail-info">
+        <h3>详细信息</h3>
+        <% _.each(data.details, function(detail) { %>
+            <% if (detail.type === 'text') { %>
+                <p><%= detail.content %></p>
+            <% } %>
+        <% }); %>
+    </div>
+</script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
+<script type="text/javascript">
+    var data = {
+        id: '1234',
+        title: '年底大酬宾，充100送50',
+        date: '2015-02-01',
+        details: [
+            {
+                type: 'text',
+                content: '刷卡机撒撒娇的说时间啊就撒娇说看时间啊老大双节快乐撒就撒了撒就撒打算对萨睡觉啊了撒了萨利萨里的撒世界上世界看得见顶焦度计当机立断家来上课；三十四大丢三落四家距离圣诞节劳动节啊的卡的世界老大大的啊的阿大来得及拉萨大大鲁大师的四大啊设计师啦的打蜡来的啊的四大说代理商打算啦啦撒了句撒了的拉动拉萨来的啊的都是京东；上课的撒萨基哦说。撒娇撒娇，撒谎就会电视萨科撒谎开始。'
+            }
+        ]
+    };
+    $('#clinicAd').html(_.template($('#clinicAdTpl').html(), data));
+	apiready = function() {
+
+	};
+</script>
+</body>
+</html>

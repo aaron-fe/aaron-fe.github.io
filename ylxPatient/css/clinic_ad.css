@@ -1,0 +1,8 @@
+.ad-item {
+  border-bottom: 1px solid #eaeaea;
+  padding: 6px 10px;
+}
+.ad-item .date {
+  color: #a4a4a4;
+  margin-top: 3px;
+}

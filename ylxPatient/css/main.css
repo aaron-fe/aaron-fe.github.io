@@ -1,0 +1,6 @@
+#header .header-item {
+  display: none;
+}
+#header .header-item-act {
+  display: block;
+}

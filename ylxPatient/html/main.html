@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>Hello APP</title>
+    <title>医联系</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
@@ -21,10 +21,9 @@
 		<div class="header-item" id="messages">
 		    <h1>消息</h1>
 		</div>
-		<div class="header-item" id="my">
-		    <h1>我</h1>
-		</div>
+		<div class="header-item" id="my"></div>
 	</div>
+	<div id="main"></div>
     <div id="footer" class="clearfix">
         <div class="nav-item pull-left nav-item-act" tapmode onclick="switchFrame(0);"><i class="icon icon-home"></i><span>首页</span></div>
         <div class="nav-item pull-left" tapmode onclick="switchFrame(1);"><i class="icon icon-search"></i><span>发现</span></div>
@@ -34,6 +33,7 @@
 </div>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
 <script type="text/javascript">
 	var frameNames = ['home', 'discover', 'messages', 'my'];
 	function switchFrame(index) {
@@ -48,9 +48,16 @@
 		var headerHeight = $('#header').height();
 		var footerHeight = $('#footer').height();
 
+		_.each(frameNames, function(name) {
+			api.setFrameAttr({
+				name: name + '_frame',
+				hidden: true
+			});
+		});
+
 		var frameName = frameNames[index];
 		api.openFrame({
-			name: frameName,
+			name: frameName + '_frame',
 			url: './' + frameName + '_frame.html',
 			bounces: false,
 			rect: {
@@ -64,6 +71,27 @@
 		});
 	}
     apiready = function() {
+		$api.fixIos7Bar($api.byId('home'));
+		$api.fixIos7Bar($api.byId('discover'));
+		$api.fixIos7Bar($api.byId('messages'));
+		$api.fixIos7Bar($api.byId('my'));
+
+		var headerHeight = $('#header').height();
+		var footerHeight = $('#footer').height();
+
+    	api.openFrame({
+    		name: 'home_frame',
+    		url: './home_frame.html',
+    		bounces: false,
+    		rect: {
+    			x: 0,
+    			y: headerHeight,
+    			w: 'auto',
+    			h: api.frameHeight - headerHeight - footerHeight
+    		},
+    		vScrollBarEnabled: false,
+            hScrollBarEnabled: false
+    	});
     };
 </script>
 </body>

@@ -18,7 +18,7 @@
     <section class="con-sec">
     	<div class="btn-group clearfix">
     		<div class="btn btn-consult"><span>咨询</span></div>
-    		<div class="btn btn-open-intro" onclick="openWin('doctor_intro')"><span>简介</span></div>
+    		<div class="btn btn-open-intro" onclick="openDoctorIntro()"><span>简介</span></div>
     		<div class="btn btn-pay-attention"><span>关注</span></div>
     	</div>
     </section>
@@ -61,16 +61,16 @@
 
 	$('#consultList').html(_.template($('#consultListTpl').html(), data));
 
-	function openWin(pageName) {
+	function openDoctorIntro() {
 		api.openWin({
-			name: pageName,
-			url: './' + pageName + '.html',
+			name: 'doctor_intro',
+			url: './doctor_intro.html',
 			bounces: false
 		});
 	}
 
 	apiready = function() {
-
+		$api.fixIos7Bar($api.byId('header'));
 	};
 </script>
 </body>

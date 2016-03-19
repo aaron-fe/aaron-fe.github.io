@@ -17,7 +17,7 @@
 			<h3>联系电话</h3>
 			<p>010-88886666</p>
 		</div>
-		<div class="top-item health-class" onclick="openWin('health_class')">
+		<div class="top-item health-class" onclick="openHealthClass('healthClass1')">
 			<div class="icon icon-tv"></div>
 			<h3>健康讲堂</h3>
 			<p>为您讲诉健康知识</p>
@@ -44,7 +44,7 @@
 		<div class="tab-content">
 			<div class="tab-content-item tab-content-item-act">
 				<ul class="doctor-list">
-					<li onclick="openWin('doctor_home')">
+					<li onclick="openDoctorHome('doctor1')">
 						<div class="doctor-info">
 							<img src="../image/fake-pic.png" class="doctor-photo">
 							<h4 class="doctor-name">张祥胜<span class="ext-info">可咨询</span><span class="ext-info">可外诊</span></h4>
@@ -52,7 +52,7 @@
 							<p>擅长：各类骨科疾病的中医治疗</p>
 						</div>
 					</li>
-					<li onclick="openWin('doctor_home')">
+					<li onclick="openDoctorHome('doctor2')">
 						<div class="doctor-info">
 							<img src="../image/fake-pic.png" class="doctor-photo">
 							<h4 class="doctor-name">王五<span class="ext-info">可咨询</span><span class="ext-info">可外诊</span></h4>
@@ -64,7 +64,7 @@
 			</div>
 			<div class="tab-content-item">
 				<ul class="doctor-list">
-					<li onclick="openWin('doctor_home')">
+					<li onclick="openDoctorHome('doctor3')">
 						<div class="doctor-info">
 							<img src="../image/fake-pic.png" class="doctor-photo">
 							<h4 class="doctor-name">李四<span class="ext-info">可咨询</span></h4>
@@ -72,7 +72,7 @@
 							<p>擅长：各类牙科</p>
 						</div>
 					</li>
-					<li onclick="openWin('doctor_home')">
+					<li onclick="openDoctorHome('doctor4')">
 						<div class="doctor-info">
 							<img src="../image/fake-pic.png" class="doctor-photo">
 							<h4 class="doctor-name">赵五<span class="ext-info">可咨询</span><span class="ext-info">可外诊</span></h4>
@@ -87,11 +87,24 @@
 </div>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-	function openWin(pageName) {
+	function openHealthClass(id) {
 		api.openWin({
-			name: pageName,
-			url: './' + pageName + '.html',
-			bounces: false
+			name: 'health_class',
+			url: './health_class.html',
+			bounces: false,
+			pageParam: {
+				healthClassId: id
+			}
+		});
+	}
+	function openDoctorHome(id) {
+		api.openWin({
+			name: 'doctor_home',
+			url: './doctor_home.html',
+			bounces: false,
+			pageParam: {
+				doctorId: id
+			}
 		});
 	}
 	apiready = function() {

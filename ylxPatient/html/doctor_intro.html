@@ -7,7 +7,6 @@
     <title>医生简介</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
-    <link rel="stylesheet" type="text/css" href="../css/doctor_intro.css" />
 </head>
 <body>
 <div id="wrap">
@@ -15,27 +14,29 @@
     	<div class="back" tapmode onclick="api.closeWin();"></div>
         <h1>医生简介</h1>
     </div>
-    <section>
-    	<div id="doctorIntro"></div>
-    </section>
 </div>
-<script type="text/template" id="doctorIntroTpl">
-<% _.each(data, function(item) { %>
-	<p><%= item.content %></p>
-<% }); %>
-</script>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/zepto.min.js"></script>
-<script type="text/javascript" src="../script/underscore.min.js"></script>
 <script type="text/javascript">
-	var data = [{
-		content: '张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。' 
-	}, {
-		content: '张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。'
-	}];
-	$('#doctorIntro').html(_.template($('#doctorIntroTpl').html(), data));
 	apiready = function() {
+        $api.fixIos7Bar($api.byId('header'));
 
+        var doctorId = api.pageParam.doctorId;
+        var headerH = $('#header').height();
+        api.openFrame({
+            name: 'doctor_intro_frame',
+            url: 'doctor_intro_frame.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                doctorId: doctorId
+            }
+        });
 	};
 </script>
 </body>

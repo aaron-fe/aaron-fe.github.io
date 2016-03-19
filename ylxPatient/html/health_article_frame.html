@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>健康内容</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/health_article_frame.css" />
+</head>
+<body>
+<div id="wrap">
+    <section>
+    	<div id="article"></div>
+    </section>
+</div>
+
+<script type="text/template" id="articleTpl">
+<div class="header">
+	<img class="doctor-pic" src="<%= data.doctor_pic %>">
+	<h3 class="title"><%= data.title %></h3>
+	<p class="date"><%= data.date %></p>
+</div>
+<div class="body">
+	<% _.each(data.content, function(con) { %>
+		<% if (con.type === 'text') { %>
+			<p><%= con.content %></p>
+		<% } %>
+	<% });%>
+</div>
+</script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
+<script type="text/javascript">
+	var data = {
+		id: '13142348702',
+		title: '诊所医生发布的健康帖子',
+		date: '2015-12-12',
+		doctor_name: '李四',
+		doctor_pic: '../image/fake-pic.png',
+		content: [{
+			type: 'text',
+			content: '现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录。精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德收录精湛的医术录。张祥胜，现任北京麦瑞骨科医院中医骨科主任(中医正骨专家)，其独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，友人的赞誉。'
+		}, {
+			type: 'text',
+			content: '独特的治疗手法，神奇的疗效，深受广大患者及国际友人的赞誉。其高尚的医德，精湛的医术被《中国跨世纪专科名医大典》收录。效，深受广大患者及国际友人的赞誉。'
+		}]
+	};
+
+	$('#article').html(_.template($('#articleTpl').html(), data));
+	apiready = function() {
+	};
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的医生</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/my.css" />
+    <link rel="stylesheet" type="text/css" href="../css/my_doctor_frame.css" />
+</head>
+<body>
+<div id="wrap">
+    <section>
+        <table class="my-table" id="myDoctorTable"></table>
+    </section>
+</div>
+<script type="text/template" id="myDoctorTableTpl">
+    <thead>
+        <tr>
+            <th><span>姓名</span></th>
+            <th><span>医院</span></th>
+            <th><span>关注日期</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% _.each(data.doctors, function(doctor) { %>
+            <tr>
+                <td onclick="openDoctorHome('<%= doctor.id %>')"><%= doctor.name %></td>
+                <td onclick="openClinicHome('<%= doctor.clinic_id %>')"><%= doctor.clinic_name %></td>
+                <td><%= doctor.date %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
+<script type="text/javascript">
+    function openDoctorHome(id) {
+        api.openWin({
+            name: 'doctor_home',
+            url: './doctor_home.html',
+            bounces: false,
+            pageParam: {
+                doctorId: id
+            }
+        });
+    }
+
+    function openClinicHome(id) {
+        api.openWin({
+            name: 'clinic_home',
+            url: './clinic_home.html',
+            bounces: false,
+            pageParam: {
+                clinicId: id
+            }
+        });
+    }
+    var data = {
+        doctors: [{
+            id: '1234',
+            name: '潘红军',
+            clinic_id: '52345',
+            clinic_name: '北京张祥胜中医医院',
+            date: '2016-02-10'
+        }, {
+            id: '234',
+            name: '李四',
+            clinic_id: '1234',
+            clinic_name: '北京李四中医医院',
+            date: '2015-08-10'
+        }]
+    };
+    $('#myDoctorTable').html(_.template($('#myDoctorTableTpl').html(), data));
+	apiready = function() {
+
+	};
+</script>
+</body>
+</html>

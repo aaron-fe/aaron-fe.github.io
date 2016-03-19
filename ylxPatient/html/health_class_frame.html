@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>健康讲堂</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/health_class_frame.css" />
+</head>
+<body>
+<div id="wrap">
+    <section>
+    	<div id="articleList"></div>
+    </section>
+</div>
+
+<script type="text/template" id="articleListTpl">
+<% _.each(data, function(article) { %>
+    <div class="article" onclick="openHealthArticle('<%= article.id %>')">
+    	<h3 class="title"><%= article.title %></h3>
+    	<div class="sub-info clearfix">
+    		<img class="doctor-pic" src="<%= article.doctor_pic %>">
+    		<span class="doctor-name"><%= article.doctor_name %></span>
+    		<span class="date"><%= article.date %></span>
+    	</div>
+	</div>
+<% }); %>
+</script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/underscore.min.js"></script>
+<script type="text/javascript">
+	function openHealthArticle(id) {
+		api.openWin({
+			name: 'health_article',
+			url: 'health_article.html',
+			bounces: false,
+			pageParam: {
+				healthArticleId: id
+			}
+		});
+	}
+
+	var data = [{
+		id: '13142348702',
+		title: '诊所医生发布的健康帖子',
+		date: '2015-12-12',
+		doctor_name: '李四',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	},
+	{
+		id: '13142342302',
+		title: '诊所医生发布的健康帖子1',
+		date: '2013-12-12',
+		doctor_name: '张三',
+		doctor_pic: '../image/fake-pic.png'
+	}];
+
+	$('#articleList').html(_.template($('#articleListTpl').html(), data));
+
+	apiready = function() {
+		
+	};
+</script>
+</body>
+</html>

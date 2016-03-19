@@ -1,0 +1,39 @@
+html,
+body {
+  background: #f0efed;
+}
+.article {
+  padding: 0 10px;
+  margin-top: 10px;
+  background: #fff;
+}
+.article:first-child {
+  margin-top: 0;
+}
+.article .title {
+  border-bottom: 1px solid #f0efed;
+  padding: 12px 0;
+  font-weight: normal;
+  font-size: 14px;
+}
+.article .sub-info {
+  line-height: 44px;
+}
+.article .doctor-pic {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #f0efed;
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.article .doctor-name {
+  display: inline-block;
+  margin-left: 4px;
+}
+.article .date {
+  float: right;
+  display: inline-block;
+}

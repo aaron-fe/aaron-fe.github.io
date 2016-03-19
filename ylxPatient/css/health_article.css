@@ -1,0 +1,27 @@
+#article {
+  padding: 0 10px;
+}
+#article .header {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0efed;
+}
+#article .doctor-pic {
+  border: 1px solid #f0efed;
+  border-radius: 50%;
+  display: block;
+  width: 36px;
+  height: 36px;
+  float: left;
+  margin-right: 10px;
+}
+#article .title {
+  font-size: 14px;
+  font-weight: normal;
+}
+#article .date {
+  color: #aaa;
+}
+#article .body p {
+  text-indent: 2em;
+  margin-top: 12px;
+}

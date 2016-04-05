@@ -1,43 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="format-detection" content="telephone=no">
+	<title>票贩子</title>
 	<meta name="keywords" content="票贩子, 电影票, 比价, 神器">
 	<meta name="description" content="票贩子-电影票比价神器">
-	<title>票贩子</title>
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/font-awesome.css"/>
 	<link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
-	<div id="page1" class="page">
-		<div class="logo"></div>
-		<h1>票贩子<br>会比价  更省钱</h1>
-		<div class="btn-wrap">
-			<a href="#" class="btn btn-iphone">
-				<i class="fa fa-apple"></i>
-				<span>IPHONE</span>
+	<div class="main">
+		<div id="page2" class="sec sec-poster-on-left clearfix">
+			<div class="poster-wrapper">
+				<div class="poster"></div>
+			</div>
+			<div class="clearfix content">
+				<img class="phone" src="images/phone2.png">
+				<div class="intro">
+					<h2 class="hd">专业比价<br>全网最低</h2>
+					<p class="bd">覆盖多个购票渠道：糯米、猫眼、淘宝电影、微票儿、大众点评、格瓦拉…… 一键比价全 网电影票，用最低价格看电影。</p>
+				</div>
+			</div>
+		</div>
+		<div id="page3" class="sec sec-poster-on-right clearfix">
+			<div class="poster-wrapper">
+				<div class="poster"></div>
+			</div>
+			<div class="clearfix content">
+				<img class="phone" src="images/phone3.png">
+				<div class="intro">
+					<h2 class="hd">优惠活动<br>全年无休</h2>
+					<p class="bd">全网优惠活动一手掌握，更有票贩子专享免费票、拿返现，1元看大片不再是梦想！</p>
+				</div>
+			</div>
+		</div>
+		<div id="page4" class="sec sec-poster-on-left clearfix">
+			<div class="poster-wrapper">
+				<div class="poster"></div>
+			</div>
+			<div class="clearfix content">
+				<img class="phone" src="images/phone4.png">
+				<div class="intro">
+					<h2 class="hd">覆盖全国8000+<br>家影院</h2>
+					<p class="bd">格瓦拉仅覆盖2000+家，猫眼电影仅2600+家，淘宝电影仅500+，家找不到想去的影院？票贩子在手影院全都有。</p>
+				</div>
+			</div>
+		</div>
+		<div id="page5" class="sec sec-poster-on-right clearfix">
+			<div class="poster-wrapper">
+				<div class="poster"></div>
+			</div>
+			<div class="clearfix content">
+				<img class="phone" src="images/phone5.png">
+				<div class="intro">
+					<h2 class="hd">热门电影<br>帮你抢座</h2>
+					<p class="bd">票贩预留为您抢占最佳观影位，想做哪排坐哪排，影院中央尊贵独享！</p>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<h1>票贩子</h1>
+			<p class="copy">www.piaofanzi.com<br>2015-2016 &copy; All Rights Reserved.</p>
+			<a class="weixin" href="javascript:;">
+				<i class="fa fa-weixin"></i>
+				<div class="qrcode">
+					<img src="images/qrcode.jpg" alt="">
+				</div>
 			</a>
-			<a href="#" class="btn btn-android">
-				<i class="fa fa-android"></i>
-				<span>ANDROID</span>
+			<a class="weibo" href="http://weibo.com/piaofanzivip?refer_flag=1001030201_&is_hot=1" target="_blank">
+				<i class="fa fa-weibo"></i>
 			</a>
 		</div>
-		<div class="phone phone1"></div>
 	</div>
-	<div id="page2" class="page">
-		
-	</div>
-	<div id="page3" class="page">
-		
-	</div>
-	<div id="page4" class="page">
-		
-	</div>
-	<div id="page5" class="page">
-		
-	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script>
+	/*var count = 0;
+	var speed = 0.5;
+	var blur = 0;
+	var $img = $('.image1');
+	var interval = setInterval(function() {
+
+		if (count >= 20) {
+			clearInterval(interval);
+		}
+		blur += speed;
+		$img.css({
+			'-webkit-filter': 'blur(' + blur + 'px)' 
+		});
+		count++;
+	}, 60);*/
+	$('.image1').mouseenter(function() {
+		$(this).addClass('blur');
+	}).mouseleave(function(event) {
+		/* Act on the event */
+		$(this).removeClass('blur');
+	});;
+	</script>
 </body>
 </html>

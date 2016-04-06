@@ -1,66 +1,196 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="keywords" content="票贩子, 电影票, 比价, 神器">
-	<meta name="description" content="票贩子-电影票比价神器">
-	<title>票贩子</title>
-	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/font-awesome.css"/>
-	<link rel="stylesheet" href="css/index.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="票贩子, 电影票, 比价, 神器">
+    <meta name="description" content="票贩子-电影票比价神器">
+    <title>票贩子</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script>
+        var os = function() {
+            var ua = navigator.userAgent,
+                isQB = /(?:MQQBrowser|QQ)/.test(ua),
+                isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                isAndroid = /(?:Android)/.test(ua),
+                isFireFox = /(?:Firefox)/.test(ua),
+                isChrome = /(?:Chrome|CriOS)/.test(ua),
+                isIpad = /(?:iPad|PlayBook)/.test(ua),
+                isTablet = /(?:iPad|PlayBook)/.test(ua)||(isFireFox && /(?:Tablet)/.test(ua)),
+                isSafari = /(?:Safari)/.test(ua),
+                isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                isOpen= /(?:Opera Mini)/.test(ua),
+                isUC = /(?:UCWEB|UCBrowser)/.test(ua),
+                isPc = !isPhone && !isAndroid && !isSymbian;    
+            return {
+                isQB: isQB,
+                isTablet: isTablet,
+                isPhone: isPhone,
+                isAndroid : isAndroid,
+                isPc : isPc,
+                isOpen : isOpen,
+                isUC: isUC,
+                isIpad : isIpad
+            };
+        }();
+
+        if (os.isPc) {
+            // 跳转到PC版
+            window.location.replace('../index.html');
+        }
+    </script>
 </head>
 <body>
-	<div id="page1" class="page">
-		<div class="page-desc">
-			<div class="logo"></div>
-			<h1>票贩子<br>会比价  更省钱</h1>
-			<div class="btn-wrap">
-				<a href="#" class="btn btn-iphone">
-					<i class="fa fa-apple"></i>
-					<span>IPHONE</span>
-				</a>
-				<a href="#" class="btn btn-android">
-					<i class="fa fa-android"></i>
-					<span>ANDROID</span>
-				</a>
-			</div>
-		</div>
-		<div class="phone phone1"></div>
-		<div class="page-bg"></div>	
-	</div>
-	<div id="page2" class="page">
-		<div class="page-desc">
-			<h2>专业比价全网最低</h2>
-			<p>覆盖多个购票渠道：糯米、猫眼、淘宝 电影、微票儿、大众点评、格瓦拉…… 一键比价全网电影票，用最低价格看电影。</p>
-		</div>
-		<div class="phone phone2"></div>
-		<div class="page-bg"></div>	
-	</div>
-	<div id="page3" class="page">
-		<div class="page-desc">
-			<h2>优惠活动全年无休</h2>
-			<p>全网优惠活动一手掌握，更有票贩子专 享免费票、拿返现，1元看大片不再是梦想！</p>
-		</div>
-		<div class="phone phone3"></div>
-		<div class="page-bg"></div>	
-	</div>
-	<div id="page4" class="page">
-		<div class="page-desc">
-			<h2>覆盖全国8000+家影院</h2>
-			<p>格瓦拉仅覆盖2000+家，猫眼电影仅 2600+家，淘宝电影仅3500+，家找不到想去的影院？票贩子在手影院全都有。</p>
-		</div>
-		<div class="phone phone4"></div>
-		<div class="page-bg"></div>	
-	</div>
-	<div id="page5" class="page">
-		<div class="page-desc">
-			<h2>热门电影帮你抢座</h2>
-			<p>票贩预留为您抢占最佳观影位，想做哪 排坐哪排，影院中央尊贵独享！</p>
-		</div>
-		<div class="phone phone5"></div>
-		<div class="page-bg"></div>	
-	</div>
+    <div class="page-bg page-bg-2 active" style="z-index: -10"></div>
+    <div class="page-bg page-bg-4"></div>
+    <div class="main" id="skrollr-body">
+        <section class="page page-1">
+            <div class="logo"></div>
+            <h1>票贩子<br>会比价  更省钱</h1>
+            <div class="btn-wrap">
+                <a href="#" class="btn btn-iphone">
+                    <i class="fa fa-apple"></i>
+                    <span>IPHONE</span>
+                </a><a href="#" class="btn btn-android">
+                    <i class="fa fa-android"></i>
+                    <span>ANDROID</span>
+                </a>
+            </div>
+            <div class="phone"></div>
+        </section>
+        <section class="page page-img page-2" data-emit-events data-top>
+            <div class="background"></div>
+            <div class="page-desc" data-emit-events data-center-top>
+                <h2>专业比价全网最低</h2>
+                <p>覆盖多个购票渠道：糯米、猫眼、淘宝 电影、微票儿、大众点评、格瓦拉…… 一键比价全网电影票，用最低价格看电影。</p>
+            </div>
+            <div class="phone"></div>
+        </section>
+        <section class="page page-detail page-3">
+            <div class="page-desc">
+                <h2>优惠活动全年无休</h2>
+                <p>全网优惠活动一手掌握，更有票贩子专 享免费票、拿返现，1元看大片不再是梦想！</p>
+            </div>
+            <div class="phone"></div>
+        </section>
+        <section class="page page-img page-4" data-emit-events data-bottom-top>
+            <div class="background"></div>
+            <div class="page-desc" data-emit-events data-center-top>
+                <h2>覆盖全国8000+家影院</h2>
+                <p>格瓦拉仅覆盖2000+家，猫眼电影仅 2600+家，淘宝电影仅3500+，家找不到想去的影院？票贩子在手影院全都有。</p>
+            </div>
+            <div class="phone"></div>
+        </section>
+        <section class="page page-detail page-5">
+            <div class="page-desc">
+                <h2>热门电影帮你抢座</h2>
+                <p>票贩预留为您抢占最佳观影位，想做哪 排坐哪排，影院中央尊贵独享！</p>
+            </div>
+            <div class="phone"></div>
+        </section>  
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <script>
+    $(function() {
+
+        document.documentElement.style.height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + "px";
+
+        $('body').addClass("loaded");
+
+        var screenH = (window.screen.height - window.innerHeight) > 120 ? window.innerHeight : window.screen.height;
+        var viewH = window.innerHeight;
+        var $body = $('body');
+        var $pages = $('.page');
+        var $firstPage = $('.page-1');
+        //背景图
+        var $pageBGs = $('.page-bg');
+        //含有大图的页面
+        var $imgPages = $('.page-img');
+        //含有复杂文案的页面
+        var $detailPages = $('.page-detail');
+        var mySkrollr;
+
+        /*设定高度*/
+        initHight();
+        $(window).resize(initHight);
+
+        function initHight() {
+            window.scrollTo(0, 1);
+
+            if (window.innerWidth / window.innerHeight > 320 / 480) {
+                //小屏幕
+                $body.addClass("small-screen");
+                screenH = window.innerWidth / 320 * 440;
+                viewH = window.innerHeight;
+            } else {
+                //正常屏幕
+                $body.removeClass("small-screen");
+                screenH = window.innerHeight;
+                viewH = window.innerHeight;
+            }
+            $body.css('height', viewH);
+            $firstPage.css('height', viewH);
+            $imgPages.css('height', viewH);
+            $detailPages.css('height', screenH);
+            $pageBGs.css('height', screenH);
+
+            setTimeout(function() {
+                if (mySkrollr) {
+                    mySkrollr.destroy();
+                }
+                initSkrollr();
+            }, 0);
+        }
+
+        var $page2 = $(".page-2");
+        var $page4 = $(".page-4");
+        var $page6 = $(".page-6");
+
+        function initSkrollr() {
+            mySkrollr = skrollr.init({
+                smoothScrolling: false,
+                mobileDeceleration: 0.02,
+                keyframe: function(element, name, direction) {
+                    // 显示文案
+                    if (name === 'dataCenterTop') {
+                        $(element).addClass('easeIn');
+                        return;
+                    }
+
+                    var nameDir = name + "." + direction;
+
+                    //显示对应背景图
+                    if (element == $page2[0]) {
+                        if (nameDir == "dataBottomTop.down" || nameDir == "dataTopBottom.up") {
+                            $pageBGs.eq(0).addClass('active');
+                        } else if (nameDir == "dataBottomTop.up" || nameDir == "dataTopBottom.down") {
+                            $pageBGs.eq(0).removeClass('active');
+                        }
+                    } else if (element == $page4[0]) {
+                        if (nameDir == "dataBottomTop.down" || nameDir == "dataTopBottom.up") {
+                            $pageBGs.eq(1).addClass('active');
+                        } else if (nameDir == "dataBottomTop.up" || nameDir == "dataTopBottom.down") {
+                            $pageBGs.eq(1).removeClass('active');
+                        }
+                    } else if (element == $page6[0]) {
+                        if (nameDir == "dataBottomTop.down" || nameDir == "dataTopBottom.up") {
+                            $pageBGs.eq(2).addClass('active');
+                        } else if (nameDir == "dataBottomTop.up" || nameDir == "dataTopBottom.down") {
+                            $pageBGs.eq(2).removeClass('active');
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>

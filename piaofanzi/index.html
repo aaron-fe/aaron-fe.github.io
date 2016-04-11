@@ -11,6 +11,63 @@
 </head>
 <body>
 	<div class="main">
+		<div id="page1">
+			<div class="focus">
+				<div class="bg-container">
+					<div class="bg bg-1">
+						<div class="mover clearfix">
+							<img src="images/focus1.jpg">
+							<img src="images/focus1.jpg">
+							<img src="images/focus1.jpg">
+							<img src="images/focus1.jpg">
+							<img src="images/focus1.jpg">
+							<img src="images/focus1.jpg">
+						</div>
+					</div>
+					<div class="bg bg-2">
+						<div class="mover clearfix">
+							<img src="images/focus2.jpg">
+							<img src="images/focus2.jpg">
+							<img src="images/focus2.jpg">
+							<img src="images/focus2.jpg">
+							<img src="images/focus2.jpg">
+							<img src="images/focus2.jpg">
+						</div>
+					</div>
+					<div class="bg bg-3">
+						<div class="mover clearfix">
+							<img src="images/focus3.jpg">
+							<img src="images/focus3.jpg">
+							<img src="images/focus3.jpg">
+							<img src="images/focus3.jpg">
+							<img src="images/focus3.jpg">
+							<img src="images/focus3.jpg">
+						</div>
+					</div>
+					<div class="bg bg-4">
+						<div class="mover clearfix">
+							<img src="images/focus4.jpg">
+							<img src="images/focus4.jpg">
+							<img src="images/focus4.jpg">
+							<img src="images/focus4.jpg">
+							<img src="images/focus4.jpg">
+							<img src="images/focus4.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="content-left">
+					<img class="phone1" src="images/phone1.png" alt="">
+				</div>
+				<div class="content-right">
+					<div class="slogan"></div>
+					<div class="btn-group clearfix">
+						<img src="images/qrcode.jpg" alt="" class="qrcode">
+						<a href="#" class="btn btn-android" target="_blank"><i class="icon icon-android"></i>Android</a>
+						<a href="#" class="btn btn-ios" target="_blank"><i class="icon icon-ios"></i>iPhone</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="page2" class="sec sec-poster-on-left clearfix">
 			<div class="poster-wrapper">
 				<div class="poster"></div>
@@ -75,6 +132,39 @@
 	</div>
 	
 	<script src="js/jquery.min.js"></script>
+	<script>
+	(function() {
+		var $mover1 = $('.focus .mover').eq(0);
+		var $mover2 = $('.focus .mover').eq(1);
+		var $mover3 = $('.focus .mover').eq(2);
+		var $mover4 = $('.focus .mover').eq(3);
+
+		function move($elm, direction, speed) {
+			var $img = $elm.find('img');
+			var imgWidth = $img.width();
+			var len = $img.length;
+			var pos = -imgWidth;
+			var dir = direction === 'left' ? 'left' : 'right';
+			$elm.css('width', imgWidth * len);
+			$elm.css(dir, pos);
+			setInterval(function() {
+
+				if (Math.abs(pos) >= imgWidth * (len - 2)) {
+					pos = -imgWidth;
+				}
+				pos -= speed;
+				$elm.css(dir, pos);
+			}, 60);
+		}
+		function init() {
+			move($mover1, 'left', 1);
+			move($mover2, 'right', 1);
+			move($mover3, 'left', 1);
+			move($mover4, 'right', 1);
+		}
+		init();
+	})();
+	</script>
 	<script>
 	/*var count = 0;
 	var speed = 0.5;

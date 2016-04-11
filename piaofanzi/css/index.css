@@ -2,9 +2,116 @@ html,
 body {
   height: 100%;
   font-size: 12px;
+  font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", STXihei, STHeiti, Heiti, SimSun, sans-serif;
 }
 .main {
   height: 100%;
+}
+#page1 {
+  height: 100%;
+}
+#page1 .focus {
+  height: 100%;
+  position: relative;
+}
+#page1 .bg-container {
+  height: 100%;
+}
+#page1 .bg-container .bg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+#page1 .bg-container .bg .mover {
+  position: absolute;
+  height: 100%;
+}
+#page1 .bg-container .bg .mover img {
+  float: left;
+  display: block;
+  width: auto;
+  height: 100%;
+  border: 0;
+  vertical-align: top;
+}
+#page1 .bg-container .bg-1,
+#page1 .bg-container .bg-2,
+#page1 .bg-container .bg-3 {
+  height: 26%;
+}
+#page1 .bg-container .bg-4 {
+  height: 22%;
+}
+#page1 .content-left,
+#page1 .content-right {
+  position: absolute;
+  top: 50%;
+}
+#page1 .content-left {
+  right: 50%;
+  height: 600px;
+  margin-top: -300px;
+}
+#page1 .content-left .phone1 {
+  height: 100%;
+  width: auto;
+}
+#page1 .content-right {
+  left: 50%;
+  height: 500px;
+  margin-top: -250px;
+}
+#page1 .slogan {
+  width: 492px;
+  height: 258px;
+  background: url(../images/slogan.png);
+}
+#page1 .btn-group {
+  height: 160px;
+  margin-top: 70px;
+  padding-left: 35px;
+}
+#page1 .qrcode {
+  display: block;
+  width: 160px;
+  height: 160px;
+  float: left;
+  margin-right: 40px;
+}
+#page1 .btn {
+  color: #fff;
+  font-size: 28px;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  float: left;
+  display: block;
+  padding-left: 80px;
+  position: relative;
+  width: 234px;
+}
+#page1 .btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+#page1 .btn-ios {
+  margin-top: 36px;
+}
+#page1 .icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+#page1 .icon-android {
+  background: url(../images/android.png);
+}
+#page1 .icon-ios {
+  background: url(../images/ios.png);
 }
 #page2 .poster {
   background-image: url(../images/poster2.jpg);

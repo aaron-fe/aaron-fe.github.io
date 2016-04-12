@@ -1,65 +1,97 @@
 (function() {
-	var $movers = $('.focus .mover');
-	var $mover1 = $movers.eq(0);
-	var $mover2 = $movers.eq(1);
-	var $mover3 = $movers.eq(2);
-	var $mover4 = $movers.eq(3);
-	var len = $mover1.find('img').length;
-	var winHeight = $(window).height();
-	var imgs = [{
-		width: 1920,
-		height: 248,
-		ratio: 0.26
-	}, {
-		width: 1920,
-		height: 247,
-		ratio: 0.26
-	}, {
-		width: 1920,
-		height: 249,
-		ratio: 0.26
-	}, {
-		width: 1920,
-		height: 197,
-		ratio: 0.22
-	}];
-
-	function initMoverWidth() {
-		$.each($movers, function(i, mover) {
-			var img = imgs[i];
-			$(mover).css({
-				width: len * winHeight * img.ratio * img.width / img.height
-			});
-		});
+	function Mover($elm, opt) {
+		this.$elm = $elm;
+		this.opt = $.extend({
+			imgWidth: 1920,
+			imgHeight: 248,
+			ratio: 0.26,
+			dir: 'left',
+			speed: 1
+		},  opt || {});
 	}
 
-	initMoverWidth();
+	Mover.prototype = {
+		initElem: function() {
+			var opt = this.opt;
+			var width = opt.imgWidth;
+			var height = opt.imgHeight;
+			var ratio = opt.ratio;
+			var winHeight = $(window).height();
+			var len = this.len = this.$elm.find('img').length;
+			var imageWidth = this.imageWidth = ratio * winHeight / height * width;
+			var dir = this.dir = opt.dir === 'right' ? 'right' : 'left';
+			this.$elm.css('width', len * imageWidth);
+			this.$elm.css(dir, -imageWidth);
+		},
 
-	function move($elm, direction, speed) {
-		var $img = $elm.find('img');
-		var imgWidth = $img.width();
-		var len = $img.length;
-		var pos = -imgWidth;
-		var dir = direction === 'left' ? 'left' : 'right';
-		$elm.css('width', imgWidth * len);
-		$elm.css(dir, pos);
-		setInterval(function() {
-			if (Math.abs(pos) >= imgWidth * (len - 2)) {
-				pos = -imgWidth;
+		init: function() {
+			this.initElem();
+			this.move();
+			this.bindEvent();
+		},
+
+		move: function() {
+			if (this.interval) {
+				clearInterval(this.interval);
 			}
-			pos -= speed;
-			$elm.css(dir, pos);
-		}, 60);
-	}
-	function init() {
-		move($mover1, 'left', 1);
-		move($mover2, 'right', 1);
-		move($mover3, 'left', 1);
-		move($mover4, 'right', 1);
-	}
-	init();
+			var opt = this.opt;
+			var speed = opt.speed;
+			var pos = -this.imageWidth;
+			var dir = this.dir;
+			var me = this;
+			this.interval = setInterval(function() {
+				if (Math.abs(pos) >= me.imageWidth * (me.len - 2)) {
+					pos = -this.imageWidth;
+				}
+				pos -= speed;
+				me.$elm.css(dir, pos);
+			}, 60);
+		},
 
-	// $(window).on('resize', function() {
-	// 	init();
-	// });
+		bindEvent: function() {
+			var me = this;
+			$(window).on('resize', function() {
+				me.initElem();
+				me.move();
+			});
+		}
+	};
+
+	var $movers = $('.focus .mover');
+
+	var mover1 = new Mover($movers.eq(0), {
+		imgWidth: 1920,
+		imgHeight: 248,
+		ratio: 0.26,
+		dir: 'left',
+		speed: 1
+	});
+	mover1.init();
+
+	var mover2 = new Mover($movers.eq(1), {
+		imgWidth: 1920,
+		imgHeight: 247,
+		ratio: 0.26,
+		dir: 'right',
+		speed: 1
+	});
+	mover2.init();
+
+	var mover3 = new Mover($movers.eq(2), {
+		imgWidth: 1920,
+		imgHeight: 249,
+		ratio: 0.26,
+		dir: 'left',
+		speed: 1
+	});
+	mover3.init();
+
+	var mover4 = new Mover($movers.eq(3), {
+		imgWidth: 1920,
+		imgHeight: 197,
+		ratio: 0.22,
+		dir: 'right',
+		speed: 1
+	});
+	mover4.init();
 })();

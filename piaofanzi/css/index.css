@@ -51,6 +51,7 @@ body {
   right: 50%;
   height: 600px;
   margin-top: -300px;
+  margin-right: 25px;
 }
 #page1 .content-left .phone1 {
   height: 100%;

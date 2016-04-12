@@ -58,6 +58,7 @@ body {
 }
 #page1 .content-right {
   left: 50%;
+  width: 480px;
   height: 500px;
   margin-top: -250px;
 }

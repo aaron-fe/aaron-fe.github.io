@@ -1,13 +1,16 @@
+// 首屏动画
 (function() {
+	var settings = {
+		imgWidth: 1920,
+		imgHeight: 248,
+		ratio: 0.26,
+		dir: 'left',
+		speed: 1
+	};
+
 	function Mover($elm, opt) {
 		this.$elm = $elm;
-		this.opt = $.extend({
-			imgWidth: 1920,
-			imgHeight: 248,
-			ratio: 0.26,
-			dir: 'left',
-			speed: 1
-		},  opt || {});
+		this.opt = $.extend(settings, opt || {});
 	}
 
 	Mover.prototype = {
@@ -94,4 +97,26 @@
 		speed: 1
 	});
 	mover4.init();
+})();
+
+(function() {
+	/*var settings = {};
+	function Anim($elm, opt) {
+		this.$elm = $elm;
+		this.opt = $.extend(settings, opt || {});
+	}
+
+	Anim.prototype = {
+		init: function() {
+
+		},
+		bindEvent: function() {
+			var me = this;
+			$(window).on('scroll', function() {
+
+			});
+		}
+	};
+
+	var anim = new Anim();*/
 })();

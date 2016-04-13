@@ -261,11 +261,11 @@ body {
 #footer .weixin .qrcode {
   display: none;
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border: 1px solid #f95801;
-  top: -116px;
-  left: -35px;
+  top: -166px;
+  left: -60px;
 }
 #footer .weixin .qrcode:after {
   content: '';

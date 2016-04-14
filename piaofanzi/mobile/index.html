@@ -28,7 +28,7 @@
                 isPhone = /(?:iPhone)/.test(ua) && !isTablet,
                 isOpen= /(?:Opera Mini)/.test(ua),
                 isUC = /(?:UCWEB|UCBrowser)/.test(ua),
-                isPc = !isPhone && !isAndroid && !isSymbian;    
+                isPc = !isPhone && !isAndroid && !isSymbian;
             return {
                 isQB: isQB,
                 isTablet: isTablet,
@@ -43,7 +43,7 @@
 
         if (os.isPc) {
             // 跳转到PC版
-            window.location.replace('../index.html');
+            window.location.replace('http://aaron-fe.github.io/piaofanzi/index.html');
         }
     </script>
 </head>

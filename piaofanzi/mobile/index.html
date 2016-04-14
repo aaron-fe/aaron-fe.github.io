@@ -94,7 +94,28 @@
                 <p>票贩预留为您抢占最佳观影位，想做哪 排坐哪排，影院中央尊贵独享！</p>
             </div>
             <div class="phone"></div>
-        </section>  
+        </section>
+        <section class="page page-detail page-6">
+            <div class="logo"></div>
+            <h1>票贩儿@比价<br>会比价  更省钱</h1>
+            <div class="btn-wrap">
+                <a href="https://itunes.apple.com/cn/app/piao-fan-zi-hui-bi-jia-geng/id1067218483?l=en&mt=8" target="_blank" class="btn btn-iphone">
+                    <i class="fa fa-apple"></i>
+                    <span>IPHONE</span>
+                </a><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.coolsoft.movie" target="_blank" class="btn btn-android">
+                    <i class="fa fa-android"></i>
+                    <span>ANDROID</span>
+                </a>
+            </div>
+            <footer>
+                <h3>票贩子</h3>
+                <p>www.piaofanzi.com<br>备案信息 2015-2016 All Right</p>
+                <div class="link-group">
+                    <a href="#" target="_blank"><i class="fa fa-weibo"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-weixin"></i></a>
+                </div>
+            </footer>
+        </section>
     </div>
     <script src="js/zepto.min.js"></script>
     <script src="js/skrollr.min.js"></script>
@@ -125,7 +146,7 @@
         function initHight() {
             window.scrollTo(0, 1);
 
-            if (window.innerWidth / window.innerHeight > 320 / 480) {
+            if (window.innerWidth / window.innerHeight >= 320 / 480) {
                 //小屏幕
                 $body.addClass("small-screen");
                 screenH = window.innerWidth / 320 * 440;

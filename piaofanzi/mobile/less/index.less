@@ -50,41 +50,69 @@ body {
 	overflow: hidden;
 	text-align: center;
 	color: #fff;
-	.logo {
-		width: 120px;
-		height: 120px;
-		margin: 20px auto 0;
-		background-image: url(../images/logo.png);
-		background-size: 100%;
-	}
-	h1 {
-		font-weight: 400;
-		font-size: 20px;
-		line-height: 1.5;
-	}
-	.btn {
-		display: inline-block;
-		text-decoration: none;
-		height: @btn-height;
-		line-height: @btn-height;
-		border-radius: @btn-height / 2;
-		width: @btn-width;
-		margin: 20px @btn-margin;
-		color: #fff;
-		font-size: 20px;
-		border: 1px solid #fff;
-	}
-	.btn-iphone {
-		margin-right: @btn-margin / 2;
-	}
-	.btn-android {
-		margin-left: @btn-margin / 2;
-	}
 	.phone {
 		top: 270px;
 		background-image: url(../images/phone1.png);
-		background-size: 80% auto;
+		background-size: 100% auto;
 	}
+}
+
+.page-1, .page-6 {
+    .logo {
+        width: 120px;
+        height: 120px;
+        margin: 20px auto 0;
+        background-image: url(../images/logo.png);
+        background-size: 100%;
+    }
+    h1 {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    .btn {
+        display: inline-block;
+        text-decoration: none;
+        height: @btn-height;
+        line-height: @btn-height;
+        border-radius: @btn-height / 2;
+        width: @btn-width;
+        margin: 20px @btn-margin;
+        color: #fff;
+        font-size: 20px;
+        border: 1px solid #fff;
+    }
+    .btn-iphone {
+        margin-right: @btn-margin / 2;
+    }
+    .btn-android {
+        margin-left: @btn-margin / 2;
+    }
+}
+
+.page-6 {
+    text-align: center;
+    color: #ff7327;
+    .logo {
+        margin-top: 60px;
+        background-image: url(../images/logo_bottom.png);
+    }
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .btn {
+        color: #ff7327;
+        border-color: #ff7327;
+    }
+}
+
+.small-screen {
+    .page-1 {
+        .phone {
+            background-size: 80% auto;
+        }
+    }
 }
 
 .page-2 {
@@ -162,29 +190,35 @@ body {
 }
 
 footer {
-    height: 100px;
-    background: #2a2a2a;
-    color: #8c8c8c;
+    padding: 10px 0;
+    background: #3d3d3d;
+    color: #fff;
     text-align: center;
-}
-
-footer .computer a {
-    padding-left: 22px;
-    background: url(http://sqimg.qq.com/qq_product_operations/imb/icon-computer.png) left center no-repeat;
-    background-size: 16.5px 14px;
-    text-decoration: none;
-    line-height: 50px;
-    height: 50px;
-}
-
-footer .computer a, footer .computer a:focus, footer .computer a:visited, footer .computer a:active {
-    color: #8c8c8c;
-}
-
-footer p {
-    font-size: 10px;
-    color: #8c8c8c;
-    line-height: 1.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    h3 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 12px;
+    }
+    .link-group {
+        margin-top: 6px;
+        a {
+            display: inline-block;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            margin: 0 5px;
+        }
+    }
 }
 
 @-webkit-keyframes before_fade_in {

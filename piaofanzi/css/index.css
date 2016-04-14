@@ -92,9 +92,11 @@ body {
   padding-left: 80px;
   position: relative;
   width: 234px;
+  transition: background-color 0.3s;
 }
 .btn:hover {
   background: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s;
 }
 .btn .icon {
   width: 40px;

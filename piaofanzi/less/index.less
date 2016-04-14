@@ -1,5 +1,6 @@
 @poster-width: 36%;
-@poster-offset: 8%; 
+@poster-offset: 8%;
+@poster-anim-distance: 1%;
 @phone-width: 325px;
 @phone-height: 555px;
 @phone-margin: 50px;
@@ -8,6 +9,8 @@
 @intro-margin: 10px;
 @content-left-height: 600px;
 @content-right-height: 500px;
+@phone-anim-distance: 400px;
+@intro-anim-distance: 500px;
 
 html, body {
 	height: 100%;
@@ -139,6 +142,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
+	overflow: hidden;
 	.poster-wrapper {
 		width: @poster-width;
 		height: 100%;
@@ -153,8 +157,10 @@ html, body {
 			background-repeat: no-repeat;
 			background-position: 100% center;
 			background-size: auto 100%;
-			filter: blur(4px);
+			filter: blur(0);
+			transition: all .6s ease-in-out;
 		}
+
 	}
 	.content {
 		position: relative;
@@ -188,6 +194,11 @@ html, body {
 		line-height: 2;
 		color: #897056;
 	}
+	&.sec-anim {
+		.poster {
+			filter: blur(4px);
+		}
+	}
 }
 
 #page5 {
@@ -218,17 +229,42 @@ html, body {
 		float: left;
 	}
 	.phone {
+		left: @phone-margin + @phone-anim-distance;
+		transition: left .4s;
+		
+	}
+	.intro {
+		left: @phone-margin + @phone-width + @intro-margin + @intro-anim-distance;
+		transition: left .4s ease-in-out;
+	}
+}
+
+.sec-poster-on-right {
+	.poster-wrapper, .content {
+		float: right;
+	}
+	.phone {
+		right: @phone-margin + @phone-anim-distance;
+		transition: right .4s;
+	}
+	.intro {
+		right: @phone-margin + @phone-width + @intro-margin + @intro-anim-distance;
+		transition: right .4s ease-in-out;
+	}
+}
+
+.no-csstransitions .sec-poster-on-left,
+.sec-poster-on-left.sec-anim {
+	.phone {
 		left: @phone-margin;
 	}
 	.intro {
 		left: @phone-margin + @phone-width + @intro-margin;
 	}
-
 }
-.sec-poster-on-right {
-	.poster-wrapper, .content {
-		float: right;
-	}
+
+.no-csstransitions .sec-poster-on-right,
+.sec-poster-on-right.sec-anim {
 	.phone {
 		right: @phone-margin;
 	}
@@ -302,21 +338,4 @@ html, body {
 			}
 		}
 	}
-}
-
-.image1 {
-	animation: 2s blurToClear;
-}
-.image1.blur {
-	animation: 2s clearToBlur;
-}
-
-@keyframes clearToBlur {
-	0% { filter: blur(0); }
-	100% { filter: blur(6px); }
-}
-
-@keyframes blurToClear {
-	0% { filter: blur(6px); }
-	100% { filter: blur(0); }
 }

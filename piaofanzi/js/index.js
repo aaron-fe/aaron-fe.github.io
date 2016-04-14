@@ -99,24 +99,34 @@
 	mover4.init();
 })();
 
+// 其他屏动画
 (function() {
-	/*var settings = {};
-	function Anim($elm, opt) {
-		this.$elm = $elm;
-		this.opt = $.extend(settings, opt || {});
+	// 不支持transition
+	if (!Modernizr.csstransitions) {
+		return;
 	}
 
-	Anim.prototype = {
-		init: function() {
+	var $sections = $('.sec');
+	var threshold = 160;
 
-		},
-		bindEvent: function() {
-			var me = this;
-			$(window).on('scroll', function() {
+	function anim() {
+		var winHeight = $(window).height();
+		var scrollTop = $(window).scrollTop();
 
-			});
-		}
-	};
+		$.each($sections, function(i, sec) {
+			if ((i + 1) * winHeight <= scrollTop + threshold && scrollTop + threshold < (i + 2) * winHeight) {
+				$(sec).addClass('sec-anim');
+			}
+		});
+	}
 
-	var anim = new Anim();*/
+	anim();
+
+	$(window).on('scroll', function() {
+		anim();
+	});
+
+	$(window).on('resize', function() {
+		anim();
+	});
 })();

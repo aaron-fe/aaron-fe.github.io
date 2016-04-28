@@ -225,7 +225,8 @@
                 $qrcode.show();
             });
 
-            $('.qrcode-bg').on('click', function() {
+            $('.qrcode-bg').on('click', function(e) {
+                e.preventDefault();
                 $qrcode.hide();
             });
         })();

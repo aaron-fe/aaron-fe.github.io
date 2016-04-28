@@ -104,6 +104,7 @@
     var enableAnim = Modernizr.csstransitions;
     $('#fullPage').fullpage({
         afterLoad: function(anchorLink, index) {
+            $('#footer').show();
             if (index === 1 || !enableAnim) {
                 return;
             }

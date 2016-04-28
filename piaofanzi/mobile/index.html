@@ -43,7 +43,7 @@
 
         if (os.isPc) {
             // 跳转到PC版
-            window.location.replace('http://aaron-fe.github.io/piaofanzi/index.html');
+            // window.location.replace('http://aaron-fe.github.io/piaofanzi/index.html');
         }
     </script>
 </head>
@@ -112,10 +112,17 @@
                 <p>www.piaofanzi.com<br>备案信息 2015-2016 All Right</p>
                 <div class="link-group">
                     <a href="http://weibo.com/piaofanzivip?refer_flag=1001030201_&is_hot=1" target="_blank"><i class="fa fa-weibo"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-weixin"></i></a>
+                    <a class="btn-wechat" href="javascript:;" target="_blank"><i class="fa fa-weixin"></i></a>
                 </div>
             </footer>
         </section>
+        <div class="qrcode">
+            <div class="qrcode-bg"></div>
+            <div class="qrcode-inner">
+                <img src="images/qrcode.png" alt="">
+                <p>长按存储二维码</p>
+            </div>
+        </div>
     </div>
     <script src="js/zepto.min.js"></script>
     <script src="js/skrollr.min.js"></script>
@@ -140,10 +147,10 @@
         var mySkrollr;
 
         /*设定高度*/
-        initHight();
-        $(window).resize(initHight);
+        // initHeight();
+        // $(window).resize(initHeight);
 
-        function initHight() {
+        function initHeight() {
             window.scrollTo(0, 1);
 
             if (window.innerWidth / window.innerHeight >= 320 / 480) {
@@ -211,6 +218,18 @@
                 }
             });
         }
+
+        (function() {
+            var $qrcode = $('.qrcode');
+            $('.btn-wechat').on('click', function() {
+                $qrcode.show();
+            });
+
+            $('.qrcode-bg').on('click', function() {
+                $qrcode.hide();
+            });
+        })();
+        
     });
 </script>
 </body>

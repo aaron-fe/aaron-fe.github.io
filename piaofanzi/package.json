@@ -9,6 +9,7 @@
   "author": "xiaohong4512@163.com",
   "license": "MIT",
   "devDependencies": {
+    "fullpage.js": "^2.7.9",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-less": "^3.0.5",

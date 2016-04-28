@@ -1,175 +1,179 @@
 <!DOCTYPE html>
 <html lang="zh" class="no-js">
 <head>
-	<meta charset="UTF-8">
-	<title>票贩儿@比价</title>
-	<meta name="keywords" content="票贩子, 电影票, 比价, 神器">
-	<meta name="description" content="票贩子-电影票比价神器">
-	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/font-awesome.css"/>
-	<link rel="stylesheet" href="css/index.css"/>
-	<script>
-	    var os = function() {
-	        var ua = navigator.userAgent,
-	            isQB = /(?:MQQBrowser|QQ)/.test(ua),
-	            isWindowsPhone = /(?:Windows Phone)/.test(ua),
-	            isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
-	            isAndroid = /(?:Android)/.test(ua),
-	            isFireFox = /(?:Firefox)/.test(ua),
-	            isChrome = /(?:Chrome|CriOS)/.test(ua),
-	            isIpad = /(?:iPad|PlayBook)/.test(ua),
-	            isTablet = /(?:iPad|PlayBook)/.test(ua)||(isFireFox && /(?:Tablet)/.test(ua)),
-	            isSafari = /(?:Safari)/.test(ua),
-	            isPhone = /(?:iPhone)/.test(ua) && !isTablet,
-	            isOpen= /(?:Opera Mini)/.test(ua),
-	            isUC = /(?:UCWEB|UCBrowser)/.test(ua),
-	            isPc = !isPhone && !isAndroid && !isSymbian;
-	        return {
-	            isQB: isQB,
-	            isTablet: isTablet,
-	            isPhone: isPhone,
-	            isAndroid : isAndroid,
-	            isPc : isPc,
-	            isOpen : isOpen,
-	            isUC: isUC,
-	            isIpad : isIpad
-	        };
-	    }();
+    <meta charset="UTF-8">
+    <title>票贩儿@比价</title>
+    <meta name="keywords" content="票贩子, 电影票, 比价, 神器">
+    <meta name="description" content="票贩子-电影票比价神器">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.fullPage.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script>
+        var os = function() {
+            var ua = navigator.userAgent,
+                isQB = /(?:MQQBrowser|QQ)/.test(ua),
+                isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                isAndroid = /(?:Android)/.test(ua),
+                isFireFox = /(?:Firefox)/.test(ua),
+                isChrome = /(?:Chrome|CriOS)/.test(ua),
+                isIpad = /(?:iPad|PlayBook)/.test(ua),
+                isTablet = /(?:iPad|PlayBook)/.test(ua)||(isFireFox && /(?:Tablet)/.test(ua)),
+                isSafari = /(?:Safari)/.test(ua),
+                isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                isOpen= /(?:Opera Mini)/.test(ua),
+                isUC = /(?:UCWEB|UCBrowser)/.test(ua),
+                isPc = !isPhone && !isAndroid && !isSymbian;
+            return {
+                isQB: isQB,
+                isTablet: isTablet,
+                isPhone: isPhone,
+                isAndroid : isAndroid,
+                isPc : isPc,
+                isOpen : isOpen,
+                isUC: isUC,
+                isIpad : isIpad
+            };
+        }();
 
-	    if (!os.isPc) {
-			// 跳转到手机版
-	        window.location.replace('http://aaron-fe.github.io/piaofanzi/mobile/index.html');
-	    }
-	</script>
-	<script src="js/modernizr-custom.js"></script>
+        if (!os.isPc) {
+            // 跳转到手机版
+            window.location.replace('http://aaron-fe.github.io/piaofanzi/mobile/index.html');
+        }
+    </script>
+    <script src="js/modernizr-custom.js"></script>
 </head>
 <body>
-	<div class="main">
-		<div id="page1">
-			<div class="focus">
-				<div class="bg-container">
-					<div class="bg bg-1">
-						<div class="mover clearfix">
-							<img src="images/focus1.jpg">
-							<img src="images/focus1.jpg">
-							<img src="images/focus1.jpg">
-							<img src="images/focus1.jpg">
-							<img src="images/focus1.jpg">
-							<img src="images/focus1.jpg">
-						</div>
-					</div>
-					<div class="bg bg-2">
-						<div class="mover clearfix">
-							<img src="images/focus2.jpg">
-							<img src="images/focus2.jpg">
-							<img src="images/focus2.jpg">
-							<img src="images/focus2.jpg">
-							<img src="images/focus2.jpg">
-							<img src="images/focus2.jpg">
-						</div>
-					</div>
-					<div class="bg bg-3">
-						<div class="mover clearfix">
-							<img src="images/focus3.jpg">
-							<img src="images/focus3.jpg">
-							<img src="images/focus3.jpg">
-							<img src="images/focus3.jpg">
-							<img src="images/focus3.jpg">
-							<img src="images/focus3.jpg">
-						</div>
-					</div>
-					<div class="bg bg-4">
-						<div class="mover clearfix">
-							<img src="images/focus4.jpg">
-							<img src="images/focus4.jpg">
-							<img src="images/focus4.jpg">
-							<img src="images/focus4.jpg">
-							<img src="images/focus4.jpg">
-							<img src="images/focus4.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="content-left">
-					<img class="phone1" src="images/phone1.png" alt="">
-				</div>
-				<div class="content-right">
-					<div class="slogan"></div>
-					<div class="btn-group clearfix">
-						<img src="images/qrcode.png" alt="" class="qrcode">
-						<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.coolsoft.movie" class="btn btn-android" target="_blank"><i class="icon icon-android"></i>Android</a>
-						<a href="https://itunes.apple.com/cn/app/piao-fan-zi-hui-bi-jia-geng/id1067218483?l=en&mt=8" class="btn btn-ios" target="_blank"><i class="icon icon-ios"></i>iPhone</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="page2" class="sec sec-poster-on-left clearfix">
-			<div class="poster-wrapper">
-				<div class="poster"></div>
-			</div>
-			<div class="clearfix content">
-				<img class="phone" src="images/phone2.png">
-				<div class="intro">
-					<h2 class="hd">专业比价<br>全网最低</h2>
-					<p class="bd">覆盖多个购票渠道：糯米、猫眼、淘宝电影、微票儿、大众点评、格瓦拉…… 一键比价全 网电影票，用最低价格看电影。</p>
-				</div>
-			</div>
-		</div>
-		<div id="page3" class="sec sec-poster-on-right clearfix">
-			<div class="poster-wrapper">
-				<div class="poster"></div>
-			</div>
-			<div class="clearfix content">
-				<img class="phone" src="images/phone3.png">
-				<div class="intro">
-					<h2 class="hd">优惠活动<br>全年无休</h2>
-					<p class="bd">全网优惠活动一手掌握，更有票贩子专享免费票、拿返现，1元看大片不再是梦想！</p>
-				</div>
-			</div>
-		</div>
-		<div id="page4" class="sec sec-poster-on-left clearfix">
-			<div class="poster-wrapper">
-				<div class="poster"></div>
-			</div>
-			<div class="clearfix content">
-				<img class="phone" src="images/phone4.png">
-				<div class="intro">
-					<h2 class="hd">覆盖全国8000+<br>家影院</h2>
-					<p class="bd">格瓦拉仅覆盖2000+家，猫眼电影仅2600+家，淘宝电影仅500+，家找不到想去的影院？票贩子在手影院全都有。</p>
-				</div>
-			</div>
-		</div>
-		<div id="page5" class="sec sec-poster-on-right clearfix">
-			<div class="poster-wrapper">
-				<div class="poster"></div>
-			</div>
-			<div class="clearfix content">
-				<img class="phone" src="images/phone5.png">
-				<div class="intro">
-					<h2 class="hd">热门电影<br>帮你抢座</h2>
-					<p class="bd">票贩预留为您抢占最佳观影位，想做哪排坐哪排，影院中央尊贵独享！</p>
-					<div class="btn-group">
-						<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.coolsoft.movie" class="btn btn-android" target="_blank"><i class="icon icon-android"></i>Android</a>
-						<a href="https://itunes.apple.com/cn/app/piao-fan-zi-hui-bi-jia-geng/id1067218483?l=en&mt=8" class="btn btn-ios" target="_blank"><i class="icon icon-ios"></i>iPhone</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="footer">
-			<h1>票贩子</h1>
-			<p class="copy">www.piaofanzi.com<br>2015-2016 &copy; All Rights Reserved.</p>
-			<a class="weixin" href="javascript:;">
-				<i class="fa fa-weixin"></i>
-				<div class="qrcode">
-					<img src="images/qrcode.png" alt="">
-				</div>
-			</a>
-			<a class="weibo" href="http://weibo.com/piaofanzivip?refer_flag=1001030201_&is_hot=1" target="_blank">
-				<i class="fa fa-weibo"></i>
-			</a>
-		</div>
-	</div>
-	
-	<script src="js/jquery.min.js"></script>
-	<script src="js/index.js"></script>
+    <div class="main">
+        <div id="fullPage">
+            <div id="page1" class="section">
+                <div class="focus">
+                    <div class="bg-container">
+                        <div class="bg bg-1">
+                            <div class="mover clearfix">
+                                <img src="images/focus1.jpg">
+                                <img src="images/focus1.jpg">
+                                <img src="images/focus1.jpg">
+                                <img src="images/focus1.jpg">
+                                <img src="images/focus1.jpg">
+                                <img src="images/focus1.jpg">
+                            </div>
+                        </div>
+                        <div class="bg bg-2">
+                            <div class="mover clearfix">
+                                <img src="images/focus2.jpg">
+                                <img src="images/focus2.jpg">
+                                <img src="images/focus2.jpg">
+                                <img src="images/focus2.jpg">
+                                <img src="images/focus2.jpg">
+                                <img src="images/focus2.jpg">
+                            </div>
+                        </div>
+                        <div class="bg bg-3">
+                            <div class="mover clearfix">
+                                <img src="images/focus3.jpg">
+                                <img src="images/focus3.jpg">
+                                <img src="images/focus3.jpg">
+                                <img src="images/focus3.jpg">
+                                <img src="images/focus3.jpg">
+                                <img src="images/focus3.jpg">
+                            </div>
+                        </div>
+                        <div class="bg bg-4">
+                            <div class="mover clearfix">
+                                <img src="images/focus4.jpg">
+                                <img src="images/focus4.jpg">
+                                <img src="images/focus4.jpg">
+                                <img src="images/focus4.jpg">
+                                <img src="images/focus4.jpg">
+                                <img src="images/focus4.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-left">
+                        <img class="phone1" src="images/phone1.png" alt="">
+                    </div>
+                    <div class="content-right">
+                        <div class="slogan"></div>
+                        <div class="btn-group clearfix">
+                            <img src="images/qrcode.png" alt="" class="qrcode">
+                            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.coolsoft.movie" class="btn btn-android" target="_blank"><i class="icon icon-android"></i>Android</a>
+                            <a href="https://itunes.apple.com/cn/app/piao-fan-zi-hui-bi-jia-geng/id1067218483?l=en&mt=8" class="btn btn-ios" target="_blank"><i class="icon icon-ios"></i>iPhone</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page2" class="section section-poster-on-left clearfix">
+                <div class="poster-wrapper">
+                    <div class="poster"></div>
+                </div>
+                <div class="clearfix content">
+                    <img class="phone" src="images/phone2.png">
+                    <div class="intro">
+                        <h2 class="hd">专业比价<br>全网最低</h2>
+                        <p class="bd">覆盖多个购票渠道：糯米、猫眼、淘宝电影、微票儿、大众点评、格瓦拉…… 一键比价全 网电影票，用最低价格看电影。</p>
+                    </div>
+                </div>
+            </div>
+            <div id="page3" class="section section-poster-on-right clearfix">
+                <div class="poster-wrapper">
+                    <div class="poster"></div>
+                </div>
+                <div class="clearfix content">
+                    <img class="phone" src="images/phone3.png">
+                    <div class="intro">
+                        <h2 class="hd">优惠活动<br>全年无休</h2>
+                        <p class="bd">全网优惠活动一手掌握，更有票贩子专享免费票、拿返现，1元看大片不再是梦想！</p>
+                    </div>
+                </div>
+            </div>
+            <div id="page4" class="section section-poster-on-left clearfix">
+                <div class="poster-wrapper">
+                    <div class="poster"></div>
+                </div>
+                <div class="clearfix content">
+                    <img class="phone" src="images/phone4.png">
+                    <div class="intro">
+                        <h2 class="hd">覆盖全国8000+<br>家影院</h2>
+                        <p class="bd">格瓦拉仅覆盖2000+家，猫眼电影仅2600+家，淘宝电影仅500+，家找不到想去的影院？票贩子在手影院全都有。</p>
+                    </div>
+                </div>
+            </div>
+            <div id="page5" class="section section-poster-on-right clearfix">
+                <div class="poster-wrapper">
+                    <div class="poster"></div>
+                </div>
+                <div class="clearfix content">
+                    <img class="phone" src="images/phone5.png">
+                    <div class="intro">
+                        <h2 class="hd">热门电影<br>帮你抢座</h2>
+                        <p class="bd">票贩预留为您抢占最佳观影位，想做哪排坐哪排，影院中央尊贵独享！</p>
+                        <div class="btn-group">
+                            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.coolsoft.movie" class="btn btn-android" target="_blank"><i class="icon icon-android"></i>Android</a>
+                            <a href="https://itunes.apple.com/cn/app/piao-fan-zi-hui-bi-jia-geng/id1067218483?l=en&mt=8" class="btn btn-ios" target="_blank"><i class="icon icon-ios"></i>iPhone</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <h1>票贩子</h1>
+                    <p class="copy">www.piaofanzi.com<br>2015-2016 &copy; All Rights Reserved.</p>
+                    <a class="weixin" href="javascript:;">
+                        <i class="fa fa-weixin"></i>
+                        <div class="qrcode">
+                            <img src="images/qrcode.png" alt="">
+                        </div>
+                    </a>
+                    <a class="weibo" href="http://weibo.com/piaofanzivip?refer_flag=1001030201_&is_hot=1" target="_blank">
+                        <i class="fa fa-weibo"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

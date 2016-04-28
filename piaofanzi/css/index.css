@@ -1,13 +1,17 @@
 html,
 body {
   height: 100%;
+  width: 100%;
   font-size: 12px;
   font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", STXihei, STHeiti, Heiti, SimSun, sans-serif;
 }
 .main {
   height: 100%;
+  width: 100%;
+  position: relative;
 }
-#page1 {
+#fullPage {
+  width: 100%;
   height: 100%;
 }
 #page1 .focus {
@@ -128,19 +132,19 @@ body {
 #page5 .poster {
   background-image: url(../images/poster5.jpg);
 }
-.sec {
-  height: 100%;
+.section {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
-.sec .poster-wrapper {
+.section .poster-wrapper {
   width: 36%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-.sec .poster-wrapper .poster {
+.section .poster-wrapper .poster {
   position: absolute;
   top: -4%;
   left: -4%;
@@ -153,12 +157,12 @@ body {
           filter: blur(0);
   transition: all 0.6s ease-in-out;
 }
-.sec .content {
+.section .content {
   position: relative;
   width: 64%;
   height: 100%;
 }
-.sec .phone {
+.section .phone {
   display: block;
   width: 325px;
   height: 555px;
@@ -166,28 +170,31 @@ body {
   top: 50%;
   margin-top: -277.5px;
 }
-.sec .intro {
+.section .intro {
   width: 280px;
   height: 320px;
   position: absolute;
   top: 50%;
   margin-top: -160px;
 }
-.sec .hd {
+.section .hd {
   font-size: 40px;
   line-height: 1.5;
   color: #ff7327;
   font-weight: normal;
 }
-.sec .bd {
+.section .bd {
   padding-top: 12px;
   font-size: 20px;
   line-height: 2;
   color: #897056;
 }
-.sec.sec-anim .poster {
+.section.section-anim .poster {
   -webkit-filter: blur(4px);
           filter: blur(4px);
+}
+#page5 .phone {
+  margin-top: -307.5px;
 }
 #page5 .btn-group {
   margin-top: 40px;
@@ -207,52 +214,54 @@ body {
 }
 #page5 .intro {
   height: 460px;
-  margin-top: -230px;
+  margin-top: -260px;
 }
-.sec-poster-on-left .poster-wrapper,
-.sec-poster-on-left .content {
+.section-poster-on-left .poster-wrapper,
+.section-poster-on-left .content {
   float: left;
 }
-.sec-poster-on-left .phone {
+.section-poster-on-left .phone {
   left: 450px;
   transition: left .4s;
 }
-.sec-poster-on-left .intro {
+.section-poster-on-left .intro {
   left: 885px;
   transition: left 0.4s ease-in-out;
 }
-.sec-poster-on-right .poster-wrapper,
-.sec-poster-on-right .content {
+.section-poster-on-right .poster-wrapper,
+.section-poster-on-right .content {
   float: right;
 }
-.sec-poster-on-right .phone {
+.section-poster-on-right .phone {
   right: 450px;
   transition: right .4s;
 }
-.sec-poster-on-right .intro {
+.section-poster-on-right .intro {
   right: 885px;
   transition: right 0.4s ease-in-out;
 }
-.no-csstransitions .sec-poster-on-left .phone,
-.sec-poster-on-left.sec-anim .phone {
+.no-csstransitions .section-poster-on-left .phone,
+.section-poster-on-left.section-anim .phone {
   left: 50px;
 }
-.no-csstransitions .sec-poster-on-left .intro,
-.sec-poster-on-left.sec-anim .intro {
+.no-csstransitions .section-poster-on-left .intro,
+.section-poster-on-left.section-anim .intro {
   left: 385px;
 }
-.no-csstransitions .sec-poster-on-right .phone,
-.sec-poster-on-right.sec-anim .phone {
+.no-csstransitions .section-poster-on-right .phone,
+.section-poster-on-right.section-anim .phone {
   right: 50px;
 }
-.no-csstransitions .sec-poster-on-right .intro,
-.sec-poster-on-right.sec-anim .intro {
+.no-csstransitions .section-poster-on-right .intro,
+.section-poster-on-right.section-anim .intro {
   right: 385px;
 }
 #footer {
-  height: 90px;
+  height: 60px;
   width: 100%;
   color: #fff;
+  position: absolute;
+  bottom: 0;
   text-align: center;
   background-color: #3a3a3a;
 }
@@ -266,7 +275,7 @@ body {
 }
 #footer h1 {
   font-size: 30px;
-  line-height: 90px;
+  line-height: 60px;
 }
 #footer .copy {
   font-size: 12px;
